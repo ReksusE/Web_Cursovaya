@@ -1,0 +1,37 @@
+@use 'helpers' as *;
+
+body {
+    @include fluid-text(24, 16);
+
+    font-family: var(--font-family-base);
+    color: var(--color-light);
+    background-color: var(--color-dark);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed var(--color-light);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}

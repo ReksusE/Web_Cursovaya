@@ -1,0 +1,27 @@
+@use 'helpers' as *;
+
+:root{
+    --color-light: #FFFFFF;
+
+    --color-dark: #1A1A18;
+    --color-dark-alt: #000000;
+    
+    --color-accent-05: #F07C00;
+    --color-accent: #FB8D28;
+    --color-accent-alt: #EE7F00;
+
+    --color-red: #A40606;
+
+    --color-gray: #939393;
+    --color-gray-alt: #858585;
+
+    --font-family-base: 'HelveticaNeue', sans-serif;
+    --font-family-accent: 'Roboto', sans-serif;
+    --font-family-alt: 'OpenSans', sans-serif;
+
+    --conteiner-width: #{rem(1270)};
+    --conteiner-padding-x: #{rem(30)};
+
+    --transition-duration: 0.2s;
+    
+}
