@@ -8,94 +8,133 @@
     <script src="./Scripts/main.js" type="module" defer></script>
 </head>
 <body>
-    <header class="header">
+    <header class="header" data-js-header>
         <div class="header__body container">
-            <a href="/" class="header__logo">
+            <a href="/" class="logo__image logo">
                 <img 
                     src="/images/logo.svg" 
                     alt=""
-                    width="161" height="144"
+                    width="161" height="140"
                 >
             </a>
 
-            <div class="header__menu">
-                <nav class="header__menu-top">
-                    <ul class="header__menu-top-list">
-                        <li class="header__menu-top-item">
-                            <a href="/" class="header__menu-top-link">Философия</a>
+            <div class="header__nav" data-js-header-nav>
+                <nav class="header__menu header__menu-top">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Философия</a>
                         </li>
-                        <li class="header__menu-top-item">
-                            <a href="/" class="header__menu-top-link">Проектирование</a>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Проектирование</a>
                         </li>
-                        <li class="header__menu-top-item">
-                            <a href="/" class="header__menu-top-link">Портфолио</a>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Портфолио</a>
                         </li>
-                        <li class="header__menu-top-item">
-                            <a href="/" class="header__menu-top-link">Вдохновение</a>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Вдохновение</a>
                         </li>
-                        <li class="header__menu-top-item">
-                            <a href="/" class="header__menu-top-link">Контакты</a>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Контакты</a>
                         </li>
-                        <li class="header__menu-top-item">
-                            <a href="/" class="header__menu-top-link">Избранное</a>
+                        <li class="header__menu-item header__menu-item-push">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Избранное</a>
                         </li>
                     </ul>
                 </nav>
 
-                <nav class="header__menu-bottom">
-                    <ul class="header__menu-botom-list">
-                        <li class="header__menu-bottom-item">
-                            <a href="/" class="header__menu-bottom-link">ЗАГОРОДНЫЙ ДОМ</a>
+                <nav class="header__menu header__menu-bottom">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-bold">Загородный Дом
+                            </a>
+                            <img 
+                            src="/icons/header/caret-down-circle-outline.svg" 
+                            alt="caret-down-circle-outline"
+                            width="23"
+                            >
                         </li>
-                        <li class="header__header__menu-bottom-item">
-                            <a href="/" class="header__menu-bottom-link">ГОРОДСКАЯ КВАРТИРА</a>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-bold">Городская Квартира
+                            </a>
+                            <img 
+                            src="/icons/header/caret-down-circle-outline.svg" 
+                            alt="caret-down-circle-outline"
+                            width="23"
+                            >
                         </li>
-                        <li class="header__header__menu-bottom-item">
-                            <a href="/" class="header__menu-bottom-link">Общественные пространства</a>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-bold">Общественные пространства</a>
+                            <img 
+                            src="/icons/header/caret-down-circle-outline.svg" 
+                            alt="caret-down-circle-outline"
+                            width="23"
+                            >
                         </li>
-                        <li class="header__header__menu-bottom-item">
-                            <a href="/" class="header__menu-bottom-link">ОБЛИЦОВКА</a>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-bold">Облицовка
+                            </a>
+                            <img 
+                            src="/icons/header/caret-down-circle-outline.svg" 
+                            alt="caret-down-circle-outline"
+                            width="23"
+                            >
                         </li>
                     </ul>
                 </nav>
             </div>
 
             <div class="header__side">
-                <svg width="33" height="29" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.0373 7.11288L9.4189 0.879639L1.10791 7.11288L24.6557 27.1978L31.5815 22.3497L24.6557 14.0387L20.5002 18.1942L12.1892 9.88321L17.0373 7.11288Z" stroke="#F07C00" stroke-width="1.38516"/>
-                </svg>
-                <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.5 10V3.5V0.5H25.0455L27.5 3.5V10M0.5 10V26L3.93636 28.5H25.0455L27.5 26V10M0.5 10H9.82727L14.5 8.5L18.6636 10H27.5" stroke="#FBF8F8"/>
-                    <g filter="url(#filter0_d_5765_3527)">
-                    <circle cx="14.5" cy="14.5" r="3.75" stroke="#F3E9E9" stroke-width="0.5"/>
-                    </g>
-                    <g filter="url(#filter1_d_5765_3527)">
-                    <circle cx="14.5" cy="14.5" r="5.5" stroke="#FEFEFE"/>
-                    </g>
-                    <line x1="4.5" y1="4.56152" x2="4.5" y2="0.438418" stroke="white"/>
-                    <line x1="7" y1="6.5" x2="7" y2="0.5" stroke="white"/>
-                    <rect x="20" y="3" width="3" height="3" stroke="white"/>
-                    <defs>
-                    <filter id="filter0_d_5765_3527" x="6.5" y="10.5" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset dy="4"/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5765_3527"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5765_3527" result="shape"/>
-                    </filter>
-                    <filter id="filter1_d_5765_3527" x="4.5" y="8.5" width="20" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset dy="4"/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5765_3527"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5765_3527" result="shape"/>
-                    </filter>
-                    </defs>
-                </svg>
+                <a href="" class="side-icon">
+                    <svg width="33" height="29" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.0373 7.11288L9.4189 0.879639L1.10791 7.11288L24.6557 27.1978L31.5815 22.3497L24.6557 14.0387L20.5002 18.1942L12.1892 9.88321L17.0373 7.11288Z" stroke="#F07C00" stroke-width="1.38516"/>
+                    </svg>
+                </a>
+                <a href="" class="side-icon">
+                    <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 10V3.5V0.5H25.0455L27.5 3.5V10M0.5 10V26L3.93636 28.5H25.0455L27.5 26V10M0.5 10H9.82727L14.5 8.5L18.6636 10H27.5" stroke="#FBF8F8"/>
+                        <g filter="url(#filter0_d_5765_3527)">
+                        <circle cx="14.5" cy="14.5" r="3.75" stroke="#F3E9E9" stroke-width="0.5"/>
+                        </g>
+                        <g filter="url(#filter1_d_5765_3527)">
+                        <circle cx="14.5" cy="14.5" r="5.5" stroke="#FEFEFE"/>
+                        </g>
+                        <line x1="4.5" y1="4.56152" x2="4.5" y2="0.438418" stroke="white"/>
+                        <line x1="7" y1="6.5" x2="7" y2="0.5" stroke="white"/>
+                        <rect x="20" y="3" width="3" height="3" stroke="white"/>
+                        <defs>
+                        <filter id="filter0_d_5765_3527" x="6.5" y="10.5" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5765_3527"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5765_3527" result="shape"/>
+                        </filter>
+                        <filter id="filter1_d_5765_3527" x="4.5" y="8.5" width="20" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5765_3527"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5765_3527" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </a>
+
+                <button 
+                class="header__burger-button burger-button visible-mobile"
+                type="button"
+                aria-label="Open menu"
+                title="Open menu"
+                data-js-header-burger-button
+                >
+                    <span class="burger-button__line"></span>
+                    <span class="burger-button__line"></span>
+                    <span class="burger-button__line"></span>
+                </button>
             </div>
         </div>
     </header>
