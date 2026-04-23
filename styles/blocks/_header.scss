@@ -1,22 +1,110 @@
 @use '../helpers' as *;
 
 .header {
-    &__body{
+    &__body {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: rem(50);
+
+        @include laptop {
+            gap: rem(31);
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: rem(30);
+
+        
+
+        @include mobile {
+            position: fixed;
+            inset: 0;
+            justify-content: center;
+            align-items: center;
+            row-gap: 3rem;
+            padding: 1rem;
+            background-color: var(--color-dark);
+
+            &:not(.is-active) { 
+                @include hide;
+
+                translate: 100%;
+            }
+        }
     }
 
     &__menu {
         display: flex;
         flex-direction: column;
         gap: rem(30);
+        flex-grow: 1;
+
+        @include mobile {
+            flex-grow: 0;
+        }
 
         &-list {
             display: flex;
-            gap: rem(54);
-            font-size: rem(18);
+            align-items: center;
+            gap: rem(30);
+
+            @include tablet {
+                gap: rem(15);
+            }
+
+            @include mobile {
+                flex-direction: column;
+                row-gap: 1rem;
+            }
+        }
+
+        &-item {
+            display: flex;
+            gap: rem(5);
+
+            &-push {
+                margin-left: auto;
+
+                @include mobile {
+                    margin: 0;
+                }
+            }
+        }
+
+        &-link {
+            &-accent {
+                font-weight: 300;
+                @include fluid-text(17, 12);
+                color: var(--color-accent-05);
+
+                &:hover {
+                    color: #fff;
+                }
+                
+            }
+
+            &-bold {
+                font-weight: 400;
+                @include fluid-text(16, 12);
+            }
+        }
+    }
+
+    &__side {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: rem(30);
+
+        @include mobile {
+            display: flex;
+            flex-direction: row;
+            gap: rem(65);
+            margin-left: auto;
         }
     }
 }
+
