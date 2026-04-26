@@ -202,39 +202,34 @@ svg * {
   }
 }
 @font-face {
-  font-family: "HelveticaNeue", sans-serif;
-  src: url(/fonts/HelveticaNeue-Black.woff2) format("woff2");
+  font-family: "HelveticaNeueCyr";
   font-weight: 900;
   font-style: normal;
-  font-display: swap;
+  src: url("/fonts/helveticaneuecyr-black.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaNeue", sans-serif;
-  src: url(/fonts/HelveticaNeue-Bold.woff2) format("woff2");
+  font-family: "HelveticaNeueCyr";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  src: url("/fonts/helveticaneuecyr-bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaNeue", sans-serif;
-  src: url(/fonts/HelveticaNeue-Light.woff2) format("woff2");
+  font-family: "HelveticaNeueCyr";
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  src: url("/fonts/helveticaneuecyr-light.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaNeue", sans-serif;
-  src: url(/fonts/HelveticaNeue-Medium.woff2) format("woff2");
+  font-family: "HelveticaNeueCyr";
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  src: url("/fonts/helveticaneuecyr-medium.woff2") format("woff2");
 }
 @font-face {
-  font-family: "HelveticaNeue", sans-serif;
-  src: url(/fonts/HelveticaNeue-Roman.woff2) format("woff2");
+  font-family: "HelveticaNeueCyr";
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  src: url("/fonts/helveticaneuecyr-roman.woff2") format("woff2");
 }
 @font-face {
   font-family: "OpenSans", sans-serif;
@@ -244,14 +239,14 @@ svg * {
   font-display: swap;
 }
 @font-face {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   src: url(/fonts/Roboto-Bold.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   src: url(/fonts/Roboto-Regular.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -267,7 +262,7 @@ svg * {
   --color-red: #A40606;
   --color-gray: #939393;
   --color-gray-alt: #858585;
-  --font-family-base: 'HelveticaNeue', sans-serif;
+  --font-family-base: 'HelveticaNeueCyr', sans-serif;
   --font-family-accent: 'Roboto', sans-serif;
   --font-family-alt: 'OpenSans', sans-serif;
   --conteiner-width: 79.375rem;
@@ -319,9 +314,15 @@ html.is-lock {
 
 body {
   font-size: clamp(1rem, 0.8333333333rem + 0.5555555556vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-family-base);
   color: var(--color-light);
   background-color: var(--color-dark);
+}
+
+main {
+  flex-grow: 1;
 }
 
 a,
@@ -515,4 +516,37 @@ button[aria-label]::before {
   width: 100%;
   height: 0.125rem;
   transition-duration: var(--transition-duration);
+}
+
+.footer {
+  padding-block: 5.0625rem;
+}
+.footer__menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 11.25rem;
+  flex-wrap: wrap;
+}
+.footer__menu-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.footer__menu-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.footer__menu-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.875rem;
+  font-weight: 300;
+}
+.footer__menu-item {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
