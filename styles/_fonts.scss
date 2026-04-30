@@ -1,42 +1,43 @@
 @font-face {
-    font-family: 'HelveticaNeue', sans-serif;
-    src: url(/fonts/HelveticaNeue-Black.woff2) format('woff2');
+	font-family: 'HelveticaNeueCyr';
     font-weight: 900;
     font-style: normal;
-    font-display: swap;
+	src: url('/fonts/helveticaneuecyr-black.woff2') format('woff2'), /* Super Modern Browsers */
+		
 }
 
 @font-face {
-    font-family: 'HelveticaNeue', sans-serif;
-    src: url(/fonts/HelveticaNeue-Bold.woff2) format('woff2');
+	font-family: 'HelveticaNeueCyr';
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
+	src: url('/fonts/helveticaneuecyr-bold.woff2') format('woff2'), /* Super Modern Browsers */
+		
 }
 
 @font-face {
-    font-family: 'HelveticaNeue', sans-serif;
-    src: url(/fonts/HelveticaNeue-Light.woff2) format('woff2');
+	font-family: 'HelveticaNeueCyr';
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
+	src: url('/fonts/helveticaneuecyr-light.woff2') format('woff2'), /* Super Modern Browsers */
+		
 }
 
 @font-face {
-    font-family: 'HelveticaNeue', sans-serif;
-    src: url(/fonts/HelveticaNeue-Medium.woff2) format('woff2');
+	font-family: 'HelveticaNeueCyr';
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
+	src: url('/fonts/helveticaneuecyr-medium.woff2') format('woff2'), /* Super Modern Browsers */
+		
 }
 
 @font-face {
-    font-family: 'HelveticaNeue', sans-serif;
-    src: url(/fonts/HelveticaNeue-Roman.woff2) format('woff2');
+	font-family: 'HelveticaNeueCyr';
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+	src: url('/fonts/helveticaneuecyr-roman.woff2') format('woff2'), /* Super Modern Browsers */
+		
 }
+
 
 @font-face {
     font-family: 'OpenSans', sans-serif;
@@ -47,7 +48,7 @@
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     src: url(/fonts/Roboto-Bold.woff2) format('woff2');
     font-weight: 700;
     font-style: normal;
@@ -55,7 +56,7 @@
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     src: url(/fonts/Roboto-Regular.woff2) format('woff2');
     font-weight: 400;
     font-style: normal;

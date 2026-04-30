@@ -9,9 +9,16 @@ html{
 body {
     @include fluid-text(24, 16);
 
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-family-base);
+    line-height: normal;
     color: var(--color-light);
     background-color: var(--color-dark);
+}
+
+main {
+  flex-grow: 1;
 }
 
 a,
@@ -54,4 +61,10 @@ button {
       content: '';
     }
   }
+}
+
+h1,
+.h1 {
+  @include fluid-text(45, 30);
+  font-weight: 700;
 }
