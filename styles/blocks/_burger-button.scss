@@ -4,6 +4,8 @@
     @include square(rem(37));
     
 
+    position: relative;
+    z-index: 1000;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;

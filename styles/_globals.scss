@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--font-family-base);
+    line-height: normal;
     color: var(--color-light);
     background-color: var(--color-dark);
 }
@@ -60,4 +61,10 @@ button {
       content: '';
     }
   }
+}
+
+h1,
+.h1 {
+  @include fluid-text(45, 30);
+  font-weight: 700;
 }
