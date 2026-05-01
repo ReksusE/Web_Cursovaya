@@ -7,6 +7,7 @@
     --color-dark-alt: #000000;
     
     --color-accent-05: #F07C00;
+    --color-accent-10: #C06402;
     --color-accent: #FB8D28;
     --color-accent-alt: #EE7F00;
 
@@ -23,5 +24,7 @@
     --conteiner-padding-x: #{rem(30)};
 
     --transition-duration: 0.2s;
+
+    --border-shadow: 1px 1px 2px 0 rgba(43, 43, 42, 0.30) inset, -1px -1px 2px 0 rgba(11, 11, 10, 0.50) inset, -7px 7px 14px 0 rgba(11, 11, 10, 0.20), 7px -7px 14px 0 rgba(11, 11, 10, 0.20), -7px -7px 14px 0 rgba(43, 43, 42, 0.90), 7px 7px 18px 0 rgba(11, 11, 10, 0.90);
     
 }
