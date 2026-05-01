@@ -1,0 +1,97 @@
+@use '../helpers' as *;
+
+.founder {
+    padding-block: rem(20);
+
+    &__inner {
+        display: flex;
+        gap: rem(100);
+        align-items: center;
+        padding-inline: rem(30);
+        padding-block: rem(27);
+        box-shadow: -8.759px 8.759px 17.517px 0 rgba(11, 11, 10, 0.20) inset, 8.759px -8.759px 17.517px 0 rgba(11, 11, 10, 0.20) inset, -8.759px -8.759px 17.517px 0 rgba(43, 43, 42, 0.90) inset, 8.759px 8.759px 22.383px 0 rgba(11, 11, 10, 0.90) inset;
+        filter: drop-shadow(-0.973px -0.973px 1.946px rgba(11, 11, 10, 0.50)) drop-shadow(0.973px 0.973px 1.946px rgba(43, 43, 42, 0.30));
+
+        @include laptop {
+            padding-inline: rem(20);
+            gap: rem(50);
+        }
+
+        @include tablet{
+            flex-direction: column;
+            gap: rem(15);
+        }
+    }
+
+    &__image {
+        flex: 0 1 rem(390);
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 390/517;
+        object-fit: cover;
+        flex-shrink: 1;
+
+        @include tablet {
+            flex: none;
+            max-width: rem(252);
+            margin-inline: auto;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: rem(30);
+        padding-inline: rem(50);
+
+        @include tablet {
+            gap: rem(50);
+            padding-inline: 0;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: rem(37);
+        text-align: center;
+
+        @include laptop {
+            gap: rem(30)
+        }
+
+        @include tablet {
+            gap: rem(20)
+        }
+    }
+
+    &__role {
+        @include fluid-text(26, 16);
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: rem(4.55);
+    }
+
+    &__name {
+        color: var(--color-accent-10);
+        line-height: 0.85;
+        letter-spacing: rem(11);
+    }
+
+    & p {
+        @include fluid-text(25, 16);
+        font-weight: 300;
+        margin: 0;
+    }
+
+    &__button {
+        padding: rem(28);
+        letter-spacing: rem(1.4);
+        line-height: 1.24;
+
+        @include tablet {
+        padding: rem(10);
+        }
+    }
+}

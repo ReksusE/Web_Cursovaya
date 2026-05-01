@@ -68,3 +68,9 @@ h1,
   @include fluid-text(45, 30);
   font-weight: 700;
 }
+
+h2,
+.h2 {
+  @include fluid-text(40, 16);
+  font-weight: 700;
+}
