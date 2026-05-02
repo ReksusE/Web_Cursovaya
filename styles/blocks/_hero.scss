@@ -70,7 +70,7 @@
         }
 
         &-bold {
-            @include fluid-text(35, 30);
+            @include fluid-text(45, 30);
             letter-spacing: rem(15.75);
             
             @include mobile {
