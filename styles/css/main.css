@@ -959,6 +959,131 @@ h2,
   }
 }
 
+.trust {
+  padding-block: 1.25rem;
+  overflow: hidden;
+}
+.trust__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+@media (width <= 63.99875rem) {
+  .trust__container {
+    gap: 0.9375rem;
+  }
+}
+.trust__title {
+  font-size: clamp(1.75rem, 1.5rem + 0.8333333333vw, 2.5rem);
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+}
+.trust__navigation {
+  display: flex;
+  gap: 1.125rem;
+}
+.trust__arrow {
+  background: transparent;
+  border: none;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trust__arrow:hover {
+  opacity: 0.6;
+}
+.trust__arrow img {
+  width: 1.625rem;
+  height: auto;
+}
+.trust__slider {
+  display: flex;
+  width: 100%;
+  gap: 2.1875rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  padding-inline: 0.3125rem;
+  scrollbar-width: none;
+}
+.trust__slider::-webkit-scrollbar {
+  display: none;
+}
+@media (width <= 47.99875rem) {
+  .trust__slider {
+    gap: 1.125rem;
+  }
+}
+.trust__item {
+  flex: 0 0 calc(16.666% - 1.0625rem);
+  min-width: 10.625rem;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+@media (width <= 47.99875rem) {
+  .trust__item {
+    flex: 0 0 calc(33.3% - 0.3125rem);
+    min-width: 7.375rem;
+  }
+}
+.trust__image {
+  width: 100%;
+  aspect-ratio: 1/1.1;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background-color: #222;
+}
+.trust__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.trust__image img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+.trust__footer {
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+}
+.trust__name {
+  font-size: clamp(0.5rem, 0.3958333333rem + 0.3472222222vw, 0.8125rem);
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 1.24;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.trust__socials {
+  display: flex;
+  gap: 0.3125rem;
+  flex-shrink: 0;
+}
+.trust__social-link {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+.trust__social-link:hover {
+  opacity: 1;
+}
+.trust__social-link img, .trust__social-link svg {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
 .footer {
   padding-block: 5.0625rem;
 }
