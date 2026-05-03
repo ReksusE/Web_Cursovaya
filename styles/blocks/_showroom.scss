@@ -1,0 +1,199 @@
+@use '../helpers' as *;
+
+.showrooms {
+    padding-block: rem(50);
+
+    @include mobile {
+        padding-block: rem(25);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(60);
+
+        @include tablet {
+            gap: rem(46);
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(20);
+        padding: rem(35);
+        background: #1B1B1A;
+        box-shadow: 1px 1px 2px 0 rgba(43, 43, 42, 0.30), -1px -1px 2px 0 rgba(11, 11, 10, 0.50), -9px 9px 18px 0 rgba(11, 11, 10, 0.20) inset, 9px -9px 18px 0 rgba(11, 11, 10, 0.20) inset, -9px -9px 18px 0 rgba(43, 43, 42, 0.90) inset, 9px 9px 23px 0 rgba(11, 11, 10, 0.90) inset;
+
+        @include mobile {
+            padding: rem(30);
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+        text-align: center;
+
+        &-subtitle {
+            @include fluid-text(25, 16);
+            line-height: 1.24;
+            letter-spacing: rem(-0.75);
+            font-weight: 300;
+        }
+
+        &-title {
+            @include fluid-text(35, 16);
+            color: var(--color-accent);
+            line-height: 1.22;
+            letter-spacing: rem(16.275);
+            font-weight: 400;
+            text-transform: uppercase
+        }
+
+        &-building {
+            @include fluid-text(35, 16);
+            color: var(--color-accent);
+            line-height: 1.22;
+            letter-spacing: rem(16.275);
+            font-weight: 400;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: rem(60);
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            gap: rem(40);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+
+        &:first-of-type {
+            @include tablet {
+                order: 1;
+            }
+        }
+        &:last-of-type {
+            @include tablet {
+                order: 2;
+            }
+        }
+
+        &-name {
+            @include fluid-text(30, 16);
+            color: var(--color-accent);
+            font-weight: 400;
+            line-height: 1.22;
+            letter-spacing: 18.45px;
+            text-transform: capitalize;
+        }
+    }
+
+    &__image-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/12;
+
+        img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        &::after {
+        content: '';
+        position: absolute;
+        // Немного сдвигаем и уменьшаем тень, чтобы она красиво торчала из-за краев
+        top: 3%;
+        left: 2%;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url(/images/showroom/106.png) lightgray 50% / cover no-repeat;
+        background-size: cover;
+        z-index: 1;
+        transition: all 0.6s ease;
+        }   
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+
+        @include tablet{
+            order: 3;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+        align-items: center;
+        text-align: center;
+
+        &-title {
+            font-size: rem(14);
+            line-height: 1.24;
+            text-transform: uppercase;
+        }
+
+        &-text {
+            color: var(--color-gray-alt);
+            font-size: rem(16);
+            font-weight: 300;
+        }
+
+        @include mobile {
+            gap: rem(10);
+        }
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8);
+        align-items: center;
+
+        &-item {
+            color: var(--color-accent-05);
+            font-size: rem(16);
+            font-weight: 400;
+            transition-duration: --transition-duration;
+
+            &:hover {
+                color: var(--color-wight);
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__btn {
+        align-self: center;
+        padding: rem(27) rem(144);
+        line-height: 1.24;
+        @include fluid-text(20, 15);
+
+        @include mobile {
+            padding: rem(19) rem(26);
+        }
+    }
+}

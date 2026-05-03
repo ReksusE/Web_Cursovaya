@@ -1,6 +1,12 @@
 @use '../helpers' as *;
 
 .header {
+    padding-bottom: rem(50);
+
+    @include mobile {
+        padding-bottom: rem(25);
+    }
+
     &__body {
         display: flex;
         justify-content: space-between;

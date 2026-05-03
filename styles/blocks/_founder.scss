@@ -1,7 +1,11 @@
 @use '../helpers' as *;
 
 .founder {
-    padding-block: rem(20);
+    padding-block: rem(50);
+
+    @include mobile {
+        padding-block: rem(25);
+    }
 
     &__inner {
         display: flex;

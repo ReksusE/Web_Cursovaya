@@ -1,8 +1,12 @@
 @use '../helpers' as *;
 
 .trust {
-    padding-block: rem(20);
+    padding-block: rem(50);
     overflow: hidden;
+
+    @include mobile {
+        padding-block: rem(25);
+    }
 
     &__container {
         display: flex;

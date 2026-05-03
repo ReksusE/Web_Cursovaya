@@ -1,7 +1,13 @@
 @use '../helpers' as *;
 
 .hero {
-    padding-block: rem(40);
+    padding-top: rem(50);
+    padding-bottom: rem(90);
+
+    @include mobile {
+        padding-top: rem(25);
+        padding-bottom: rem(55);
+    }
 
     &__inner {
         position: relative;

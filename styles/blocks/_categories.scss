@@ -1,8 +1,12 @@
 @use '../helpers' as *;
 
 .categories {
-    padding-block: rem(80);
+    padding-block: rem(50);
     background-color: var(--color-dark);
+
+    @include mobile {
+        padding-block: rem(25);
+    }
 
     &__list {
         display: flex;
