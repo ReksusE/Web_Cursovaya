@@ -1,0 +1,16 @@
+@use '../helpers' as *;
+
+.button {
+    background: #1B1B1A;
+    box-shadow: var(--border-shadow);
+    border: none;
+    color: var(--color-red);
+    @include fluid-text(20, 16);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:hover {
+        color: var(--color-light);
+        scale: 1.1;
+    }
+}

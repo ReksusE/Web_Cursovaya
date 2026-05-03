@@ -1,0 +1,94 @@
+@use '../helpers' as *;
+
+.categories {
+    padding-block: rem(50);
+    background-color: var(--color-dark);
+
+    @include mobile {
+        padding-block: rem(25);
+    }
+
+    &__list {
+        display: flex;
+        gap: rem(24);
+        align-items: flex-start;
+        height: rem(641); 
+
+        @include mobile {
+            flex-direction: column;
+            height: auto;
+            gap: rem(12);
+        }
+    }
+
+    &__item {
+        position: relative;
+        flex: 1; 
+        height: rem(574);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: rem(96);
+        transition: flex 0.5s ease;
+
+        &:nth-child(even) {
+            transform: translateY(rem(60));
+        }
+
+        @include mobile {
+            height: rem(300);
+            flex: none;
+            width: 100%;
+            height: rem(289);
+            transform: translateY(0) !important;
+            padding-bottom: rem(40);
+
+        }
+
+        &:hover {
+            flex: 2; // Карточка расширяется при наведении[cite: 16]
+            
+            .categories__image img {
+                transform: scale(1.05);
+            }
+
+            &::after {
+                opacity: 0.2; // Осветляем при наведении
+            }
+        }
+
+        // Градиентное затемнение для читаемости текста
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+            z-index: 1;
+            transition: opacity 0.3s;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 2;
+        color: var(--color-light);
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: rem(16);
+        text-align: center;
+    }
+}
