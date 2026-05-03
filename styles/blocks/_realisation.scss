@@ -1,8 +1,12 @@
 @use '../helpers' as *;
 
 .realization {
-    padding-block: rem(80);
+    padding-block: rem(50);
     overflow: hidden;
+
+    @include mobile {
+        padding-block: rem(25);
+    }
 
     @include tablet {
         padding-block: rem(30);
