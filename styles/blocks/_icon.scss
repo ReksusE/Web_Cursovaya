@@ -3,3 +3,53 @@
 .side-icon:nth-child(1){
     color: var(--color-accent-05);
 }
+
+.product__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: currentColor; 
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    &-arrow {
+        display: inline-block;
+        width: 25px;
+        height: 18px;
+        background-color: currentColor; 
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+    }
+}
+
+.icon {
+    &-3d {
+        mask-image: url(/icons/actions/3d.svg);
+        -webkit-mask-image: url(/icons/actions/3d.svg);
+    }
+
+    &-favorite {
+        mask-image: url(/icons/actions/favorite.svg);
+        -webkit-mask-image: url(/icons/actions/favorite.svg);
+    }
+
+    &-share {
+        mask-image: url(/icons/actions/share.svg);
+        -webkit-mask-image: url(/icons/actions/share.svg);
+    }
+
+    &-arrow {
+        &-right {
+            mask-image: url(/icons/actions/arrow-right.svg);
+            -webkit-mask-image: url(/icons/actions/arrow-right.svg);
+        }
+    }
+}
