@@ -1,0 +1,219 @@
+@use '../helpers' as *;
+
+.product {
+    padding-block: rem(50);
+
+    @include mobile {
+        padding-block: rem(25);
+    }
+
+    &__hero {
+        display: grid;
+        grid-template-columns: minmax(rem(480), 1.2fr) rem(80) 1fr;
+        gap: rem(32);
+        align-items: start;
+        margin-bottom: rem(50);
+
+        @include laptop {
+            grid-template-columns: minmax(rem(400), 1.2fr) rem(80) 1fr;
+        }
+
+        @include tablet {
+            grid-template-columns: minmax(rem(340), 1.2fr) rem(80);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: rem(20);
+            margin-bottom: rem(25);
+        }
+    }
+
+    &__main-photo-wrap {
+        @include mobile {
+            order: 2;
+        }
+    }
+
+    &__thumbnails {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        @include mobile {
+            flex-direction: row;
+            justify-content: flex-start;
+            overflow-x: auto;
+            order: 3;
+
+            &::-webkit-scrollbar {
+                height: rem(4);
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--color-gray-alt);
+                border-radius: rem(4);
+            }
+        }
+    }
+
+    &__thumb {
+        width: 100%;
+        height: auto;
+        flex: 1 0 auto;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: 0.3;
+        transition: opasity var(--transition-duration);
+
+        &.is-active {
+            opacity: 1;
+            cursor: default;
+
+            @include hover {
+                opacity: 1;
+            }
+        }
+
+        @include hover {
+            opacity: 0.8;
+        }
+
+        @include mobile {
+            width: rem(90);
+            height: rem(90);
+            flex: 0 0 auto;
+        }
+    }
+
+    &__summary {
+        display: flex;
+        flex-direction: column;
+        gap: rem(42);
+
+        @include tablet {
+            grid-column: 1 / -1;
+        }
+
+        @include mobile {
+            display: contents;
+        }
+    
+        &-title {
+            @include fluid-text(48, 40);
+            font-weight: 300;
+            line-height: normal;
+
+            @include mobile {
+                order: 1;
+            }
+        }
+
+        &-actions {
+            display: flex;
+            gap: rem(40);
+
+            @include tablet {
+                flex-direction: column;
+                gap: rem(20);
+            }
+
+            &-link {
+                display: flex;
+                gap: rem(20);
+                font-size: rem(14);
+                font-weight: 300;
+                line-height: 1.24;
+                align-items: center;
+            }
+        }
+
+        &-btn {
+            display: flex;
+            gap: rem(20);
+            font-size: rem(20);
+            font-weight: 400;
+            line-height: 1.24;
+            color: var(--color-accent-05);
+
+            @include hover {
+                color: var(--color-light);
+            }
+        }
+
+        &-actions,
+        & > :not(&-title) {
+            @include mobile {
+                order: 4;
+            }
+        }
+    }
+
+    &__specs {
+        font-size: rem(24);
+        color: var(--color-gray-alt);
+        font-weight: 300;
+        line-height: 1;
+
+        &-list {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__concept {
+
+        &-title {
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-bottom: rem(40);
+            line-height: 1.24;
+
+            @include tablet {
+                margin-bottom: rem(20);
+            }
+        }
+
+        &-grid {
+            display: grid;
+            column-gap: rem(56);
+            row-gap: rem(20);
+            grid-template-columns: 1fr 1.28fr;
+            align-items: start;
+
+            @include tablet {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &-header {
+            grid-column: 1 / span 2;
+
+            @include tablet {
+                grid-column: 1;
+            }
+        }
+
+        &-paragraph {
+            font-size: rem(18);
+            color: var(--color-gray-alt);
+            font-weight: 300;
+            line-height: 1.24;
+
+            &:not(:last-child) {
+                margin-bottom: rem(30);
+            }
+
+            & a {
+                color: var(--color-accent-05);
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: none;
+                text-decoration-thickness: auto;
+                text-underline-offset: auto;
+                text-underline-position: from-font;
+            }
+        }
+    }
+}
