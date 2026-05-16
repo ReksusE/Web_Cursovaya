@@ -1,0 +1,115 @@
+@use '../helpers' as *;
+
+.timeline {
+    padding-block: rem(50);
+
+    &__inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: rem(48);
+    }
+
+    &__line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: rem(1);
+        background: rgba(255,255,255,0.15);
+        transform: translateX(-50%);
+    }
+
+    &__block {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+
+        &--right {
+            flex-direction: row;
+        }
+
+        &--left {
+            flex-direction: row-reverse;
+
+            & .timeline__year-side {
+                text-align: right;
+            }
+
+            & .timeline__events-side {
+                text-align: right;
+            }
+        }
+
+        &.is-open .timeline__dot {
+            background: var(--color-accent-05);
+            border-color: var(--color-accent-05);
+        }
+
+        &.is-open .timeline__events {
+            display: flex;
+            border: 1px solid var(--color-accent-05);
+            background: rgba(240,124,0,0.05);
+        }
+    }
+
+    &__dot {
+        position: absolute;
+        @include square(rem(5));
+        left: 50%;
+        top: rem(5);
+        background: rgba(255,255,255,0.2);
+        border: rem(1) solid rgba(255,255,255,0.3);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        transition: background var(--transition-duration), border-color var(--transition-duration);
+    }
+
+    &__year {
+        font-size: rem(20);
+        font-weight: 300;
+        color: rgba(255,255,255,0.9);
+        letter-spacing: rem(2);
+        cursor: pointer;
+
+        &-side {
+            flex: 0 0 50%;
+            padding-inline: 2.5rem;
+            box-sizing: border-box;
+        }
+
+        @include hover {
+            color: var(--color-accent-05);
+        }
+    }
+
+    &__events {
+        display: none;
+        flex-direction: column;
+        gap: 0.4rem;
+        list-style: none;
+        padding: 0.5rem 0.75rem;
+        margin: 0.25rem 0 0;
+
+        &-side {
+            flex: 0 0 50%;
+            padding-inline: 2.5rem;
+            box-sizing: border-box;
+        }
+    }
+
+    &__event {
+        font-size: 0.7rem;
+        font-weight: 300;
+        color: rgba(255,255,255,0.85);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        line-height: 1.5;
+
+        &::before {
+            content: "▸ ";
+            color: var(--color-accent-05);
+        }
+    }
+}
