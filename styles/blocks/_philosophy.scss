@@ -1,0 +1,87 @@
+@use '../helpers' as *;
+
+.pilosophy {
+    padding-block: rem(50);
+
+    @include mobile {
+        padding-block: rem(25);
+    }
+
+    &__container {
+        display: flex;
+        gap: rem(100);
+
+        @include tablet {
+            flex-direction: column;
+            gap: rem(40);
+        }
+    }
+
+    &__image {
+        position: relative;
+        z-index: 2;
+        max-width: none;
+
+        @include tablet{
+            max-width: 100%;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        &-wrapper {
+            position: relative;
+
+            @include tablet {
+                align-items: center;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: rem(80);
+                left: rem(60);
+                width: rem(497);
+                height: rem(355);
+                opacity: 0.2;
+                background: url(/images/philosophy/ARTKante-bg.png) lightgray 50% / cover no-repeat;
+                background-size: cover;
+                z-index: 1;
+                transition: all 0.6s ease;
+
+                @include tablet {
+                    top: auto;
+                    left: auto;
+                }
+
+                @include mobile {
+                    max-width: 100%;
+                    height: rem(300);
+                }
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: rem(65);
+
+        @include tablet {
+            gap: rem(40);
+        }
+
+        &-title {
+            font-size: rem(22);
+            font-weight: 300;
+            line-height: 1.16;
+        }
+
+        &-paragraph {
+            color: var(--color-gray-alt);
+            font-size: rem(18);
+            line-height: 1.24;
+        }
+    }
+}
