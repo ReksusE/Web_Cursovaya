@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/css/main.css">
+    <script src="./Scripts/main.js" type="module" defer></script>
+</head>
+<body>
+    <header class="header" data-js-header>
+        <div class="header__body container">
+            <a href="/" class="logo__image logo">
+                <img 
+                    src="/images/logo.svg" 
+                    alt=""
+                    width="161" height="140"
+                >
+            </a>
+
+            <div class="header__nav" data-js-header-nav>
+                <nav class="header__menu header__menu-top">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Философия</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Проектирование</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Портфолио</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Вдохновение</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Контакты</a>
+                        </li>
+                        <li class="header__menu-item header__menu-item-push">
+                            <a href="/" class="header__menu-link header__menu-link-accent">Избранное</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="header__menu header__menu-bottom">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-bold">Загородный Дом
+                            </a>
+                            <img 
+                            src="/icons/header/caret-down-circle-outline.svg" 
+                            alt="caret-down-circle-outline"
+                            width="23"
+                            >
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-bold">Городская Квартира
+                            </a>
+                            <img 
+                            src="/icons/header/caret-down-circle-outline.svg" 
+                            alt="caret-down-circle-outline"
+                            width="23"
+                            >
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-bold">Общественные пространства</a>
+                            <img 
+                            src="/icons/header/caret-down-circle-outline.svg" 
+                            alt="caret-down-circle-outline"
+                            width="23"
+                            >
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="/" class="header__menu-link header__menu-link-bold">Облицовка
+                            </a>
+                            <img 
+                            src="/icons/header/caret-down-circle-outline.svg" 
+                            alt="caret-down-circle-outline"
+                            width="23"
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header__side">
+                <a href="" class="side-icon">
+                    <svg width="33" height="29" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.0373 7.11288L9.4189 0.879639L1.10791 7.11288L24.6557 27.1978L31.5815 22.3497L24.6557 14.0387L20.5002 18.1942L12.1892 9.88321L17.0373 7.11288Z" stroke="#F07C00" stroke-width="1.38516"/>
+                    </svg>
+                </a>
+                <a href="" class="side-icon">
+                    <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 10V3.5V0.5H25.0455L27.5 3.5V10M0.5 10V26L3.93636 28.5H25.0455L27.5 26V10M0.5 10H9.82727L14.5 8.5L18.6636 10H27.5" stroke="#FBF8F8"/>
+                        <g filter="url(#filter0_d_5765_3527)">
+                        <circle cx="14.5" cy="14.5" r="3.75" stroke="#F3E9E9" stroke-width="0.5"/>
+                        </g>
+                        <g filter="url(#filter1_d_5765_3527)">
+                        <circle cx="14.5" cy="14.5" r="5.5" stroke="#FEFEFE"/>
+                        </g>
+                        <line x1="4.5" y1="4.56152" x2="4.5" y2="0.438418" stroke="white"/>
+                        <line x1="7" y1="6.5" x2="7" y2="0.5" stroke="white"/>
+                        <rect x="20" y="3" width="3" height="3" stroke="white"/>
+                        <defs>
+                        <filter id="filter0_d_5765_3527" x="6.5" y="10.5" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5765_3527"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5765_3527" result="shape"/>
+                        </filter>
+                        <filter id="filter1_d_5765_3527" x="4.5" y="8.5" width="20" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5765_3527"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5765_3527" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                </a>
+
+                <button 
+                class="header__burger-button burger-button visible-mobile"
+                type="button"
+                aria-label="Open menu"
+                title="Open menu"
+                data-js-header-burger-button
+                >
+                    <span class="burger-button__line"></span>
+                    <span class="burger-button__line"></span>
+                    <span class="burger-button__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="favorites">
+            <div class="favorites__container container">
+                <h1 class="favorites__title">Моя подборка</h1>
+                <div class="favorites__group">
+                    <div class="favorites__header">
+                        <span class="favorites__header-label">Проекты</span>
+                        <a href="#" class="favorites__header-share">
+                            <span class="icon-share product__icon"></span>
+                            Поделиться этой подборкой
+                        </a>
+                    </div>
+                    <div class="favorites__grid grid-card">
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="favorites__group">
+                    <div class="favorites__header">
+                        <span class="favorites__header-label">Вдохновение</span>
+                        <a href="#" class="favorites__header-share">
+                            <span class="icon-share product__icon"></span>
+                            Поделиться этой подборкой
+                        </a>
+                    </div>
+                    <div class="favorites__grid grid-card">
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card" data-js-concepts-card>
+                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
+                    
+                            <div class="card-ui">
+                                <div class="card-top">
+                                <span class="card-tag">Биотопливо</span>
+                                    <div class="card-actions">
+                                        <button
+                                        class="card-btn card-btn--heart is-active"
+                                        type="button"
+                                        aria-label="В избранное">
+                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
+                                            </svg>
+                                        </button>
+                                        <button
+                                        class="card-btn card-btn--share"
+                                        type="button"
+                                        aria-label="Поделиться"
+                                        >
+                                            <span class="icon-share favorites__icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="showrooms">
+            <div class="showrooms__container container">
+                <div class="showrooms__inner">
+                    <header class="showrooms__header">
+                        <p class="showrooms__header-subtitle">Приглашаем в комфортные, удобные для встреч и презентаций шоурумы</p>
+                        <div>
+                            <h2 class="showrooms__header-title">центр дизайна artplay</h2>
+                            <p class="showrooms__header-building">строение 12</p>
+                        </div>
+                    </header>
+
+                    <div class="showrooms__content">
+                        <article class="showrooms__item">
+                            <div class="showrooms__image-wrap">
+                                <img src="/images/showroom/106.png" alt="шоурум 106">
+                            </div>
+                            <h3 class="showrooms__item-name">шоурум 106</h3>
+                        </article>
+                        <div class="showrooms__info">
+                            <div class="showrooms__block">
+                                <h4 class="showrooms__block-title">Часы работы:</h4>
+                                <p class="showrooms__block-text">
+                                    Пн-Пт: 11:00 - 20:00<br>
+                                    Сб: 12:00 - 20:00<br>
+                                    Вс: по согласованию
+                                </p>
+                            </div>
+                            <div class="showrooms__block">
+                                <h4 class="showrooms__block-title">Адрес:</h4>
+                                <p class="showrooms__block-text">
+                                    105120, г. Москва, ул.<br>
+                                    Сыромятническая Нижняя,<br>
+                                    д.10, стр.12,<br>
+                                    (м.Курская, м.Чкаловская)
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <article class="showrooms__item">
+                            <div class="showrooms__image-wrap">
+                                <img src="/images/showroom/112.png" alt="шоурум 112">
+                            </div>
+                            <h3 class="showrooms__item-name">шоурум 112</h3>
+                        </article>
+                    </div>
+
+                    <div class="showrooms__link">
+                        <a href="#" class="showrooms__link-item">открыть схему проезда</a>
+                        <a href="#" class="showrooms__link-item">дорога от метро </a>
+                    </div>
+                </div>
+                
+                <button class="showrooms__btn button">заказать обратный звонок</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <nav class="footer__menu">
+                <div class="footer__menu-column">
+                    <a href="/" class="logo-image logo">
+                        <img 
+                        src="/images/logo.svg" 
+                        alt="Logo"
+                        >
+                    </a>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item">
+                            <a href="" class="footer__menu-link">Философия</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="" class="footer__menu-link">Проектирование</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="" class="footer__menu-link">Вдохновение</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="" class="footer__menu-link">Политика конфидициальности</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__menu-column">
+                    <h3 class="footer__menu-title">Концепты:</h3>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item">
+                            <img 
+                            src="/icons/footer/1.svg" 
+                            alt=""
+                            width="40"
+                            >
+                            <a href="" class="footer__menu-link">ЗАГОРОДНЫЙ ДОМ</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <img src="/icons/footer/2.png"
+                            alt=""
+                            width="40"
+                            >
+                            <a href="" class="footer__menu-link">ГОРОДСКАЯ КВАРТИРА</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <img 
+                            src="/icons/footer/3.png" 
+                            alt=""
+                            width="40"
+                            >
+                            <a href="" class="footer__menu-link">Общественные Места</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <img 
+                            src="/icons/footer/4.svg" 
+                            alt=""
+                            width="40"
+                            >
+                            <a href="" class="footer__menu-link">ОБЛИЦОВКА</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__menu-column">
+                    <h3 class="footer__menu-title">КОНТАКТЫ:</h3>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item">
+                            <img 
+                            src="/icons/footer/5.svg" 
+                            alt=""
+                            width="24"
+                            >
+                            <a href="" class="footer__menu-link">+375 (29) 700 80 90</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <img 
+                            src="/icons/footer/6.svg" 
+                            alt=""
+                            width="24"
+                            >
+                            <a href="" class="footer__menu-link">info@artkante.ru</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <img 
+                            src="/icons/footer/7.svg" 
+                            alt=""
+                            width="24"
+                            >
+                            <a href="" class="footer__menu-link">105120, г. Минск, ул. Сыромятническая Нижняя, д.10, стр.12, офисы 106 и 112</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <img 
+                            src="/icons/footer/8.svg" 
+                            alt=""
+                            width="24"
+                            >
+                            <a href="" class="footer__menu-link">artkante.ru</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <img 
+                            src="/icons/footer/9.svg" 
+                            alt=""
+                            width="24"
+                            >
+                            <a href="" class="footer__menu-link">artkante.ru</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
