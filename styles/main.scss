@@ -23,6 +23,8 @@
 @use 'blocks/showroom';
 
 @use 'blocks/concepts';
+@use 'blocks/grid';
+@use 'blocks/card';
 
 @use 'blocks/product';
 
@@ -31,6 +33,12 @@
 @use 'blocks/founder-about';
 
 @use 'blocks/timeline';
+
+@use 'blocks/favorites';
+
+@use 'blocks/portfolio';
+
+
 
 
 

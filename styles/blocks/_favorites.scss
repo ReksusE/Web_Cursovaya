@@ -1,0 +1,73 @@
+@use '../helpers' as *;
+
+.favorites {
+    padding-block: rem(50);
+
+    @include mobile {
+        padding-block: rem(25);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(80); 
+
+        @include mobile {
+            gap: rem(60);
+        }
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: rem(30);
+
+        @include mobile {
+            gap: rem(15);
+        }
+    }
+
+    &__title {
+        font-size: rem(40);
+        font-weight: 300;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mobile {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: rem(15);
+        }
+
+        &-label {
+            @include fluid-text(24, 16);
+            font-weight: 400;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+
+        &-share {
+            display: inline-flex;
+            align-items: center;
+            gap: rem(22);
+            @include fluid-text(18, 13);
+            font-weight: 300;
+            line-height: 1.24;
+
+            @include mobile {
+                gap: rem(16);
+            }
+        }
+        
+    }
+
+    &__grid {
+        @include mobile {
+            gap: rem(15);
+        }
+    }
+}
