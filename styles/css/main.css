@@ -2419,4 +2419,118 @@ h2,
   gap: 1.5rem;
   font-size: 1rem;
   align-items: center;
-}/*# sourceMappingURL=main.css.map */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+.modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+.modal__close svg {
+  width: 24px;
+  height: 24px;
+}
+.modal__close svg path {
+  stroke: #1B1B1A;
+  stroke-width: 2;
+}
+.modal__close:hover svg path {
+  stroke: var(--color-red);
+}
+
+.modal__title {
+  font-size: clamp(1.5rem, 1.3333333333rem + 0.5555555556vw, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #1B1B1A;
+}
+
+.modal__body {
+  font-size: clamp(1rem, 0.9583333333rem + 0.1388888889vw, 1.125rem);
+  color: #1B1B1A;
+  line-height: 1.5;
+}
+.modal__body p {
+  margin-bottom: 15px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.modal__input {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: clamp(0.875rem, 0.8333333333rem + 0.1388888889vw, 1rem);
+}
+.modal__input:focus {
+  outline: none;
+  border-color: var(--color-red);
+}
+
+.modal__submit {
+  background: #1B1B1A;
+  box-shadow: var(--border-shadow);
+  border: none;
+  color: var(--color-red);
+  font-size: clamp(1rem, 0.9166666667rem + 0.2777777778vw, 1.25rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  cursor: pointer;
+  text-align: center;
+}
+.modal__submit:hover {
+  color: var(--color-light);
+  scale: 1.1;
+}

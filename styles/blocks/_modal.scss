@@ -1,0 +1,124 @@
+@use '../helpers' as *;
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+
+    &--active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    
+    svg {
+        width: 24px;
+        height: 24px;
+        
+        path {
+            stroke: #1B1B1A;
+            stroke-width: 2;
+        }
+    }
+
+    &:hover {
+        svg path {
+            stroke: var(--color-red);
+        }
+    }
+}
+
+.modal__title {
+    @include fluid-text(32, 24);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #1B1B1A;
+}
+
+.modal__body {
+    @include fluid-text(18, 16);
+    color: #1B1B1A;
+    line-height: 1.5;
+
+    p {
+        margin-bottom: 15px;
+    }
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal__input {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    @include fluid-text(16, 14);
+    
+    &:focus {
+        outline: none;
+        border-color: var(--color-red);
+    }
+}
+
+.modal__submit {
+    background: #1B1B1A;
+    box-shadow: var(--border-shadow);
+    border: none;
+    color: var(--color-red);
+    @include fluid-text(20, 16);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        color: var(--color-light);
+        scale: 1.1;
+    }
+}

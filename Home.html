@@ -230,7 +230,7 @@
                             <p>Приходите к нам с вашей идеей очага и наша команда максимвльно вникнет в ваш проект.
                             Мы вместе реализуем все, что вы задумали. “</p>
                         </div>
-                        <button class="founder__button button" type="button">получить консультацию руководителя</button>
+                        <button class="founder__button button" type="button" data-js-modal-trigger="modal-consultation">получить консультацию руководителя</button>
                     </div>
                 </div>
             </div>
@@ -273,7 +273,7 @@
                     </div>
                 </div>
 
-                <button class="realization__btn button">Получить предварительную оценку проекта</button>
+                <button class="realization__btn button" data-js-modal-trigger="modal-estimate">Получить предварительную оценку проекта</button>
 
             </div>
         </section>
@@ -540,10 +540,74 @@
                     </div>
                 </div>
                 
-                <button class="showrooms__btn button">заказать обратный звонок</button>
+                <button class="showrooms__btn button" data-js-modal-trigger="modal-callback">заказать обратный звонок</button>
             </div>
         </section>
     </main>
+
+    <!-- Модальные окна -->
+    <div class="modal" data-js-modal="modal-consultation">
+        <div class="modal__overlay" data-js-modal-overlay></div>
+        <div class="modal__content">
+            <button class="modal__close" data-js-modal-close aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h3 class="modal__title">Консультация руководителя</h3>
+            <div class="modal__body">
+                <p>Оставьте свои контактные данные, и Ирина Новоселова свяжется с вами для обсуждения вашего проекта.</p>
+                <form class="modal__form">
+                    <input type="text" class="modal__input" placeholder="Ваше имя" required>
+                    <input type="tel" class="modal__input" placeholder="Телефон" required>
+                    <input type="email" class="modal__input" placeholder="Email">
+                    <button type="submit" class="modal__submit">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-js-modal="modal-estimate">
+        <div class="modal__overlay" data-js-modal-overlay></div>
+        <div class="modal__content">
+            <button class="modal__close" data-js-modal-close aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h3 class="modal__title">Предварительная оценка проекта</h3>
+            <div class="modal__body">
+                <p>Заполните форму, и мы подготовим предварительный расчет стоимости вашего проекта.</p>
+                <form class="modal__form">
+                    <input type="text" class="modal__input" placeholder="Ваше имя" required>
+                    <input type="tel" class="modal__input" placeholder="Телефон" required>
+                    <input type="email" class="modal__input" placeholder="Email">
+                    <textarea class="modal__input" placeholder="Описание проекта" rows="4"></textarea>
+                    <button type="submit" class="modal__submit">Получить оценку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-js-modal="modal-callback">
+        <div class="modal__overlay" data-js-modal-overlay></div>
+        <div class="modal__content">
+            <button class="modal__close" data-js-modal-close aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h3 class="modal__title">Заказать обратный звонок</h3>
+            <div class="modal__body">
+                <p>Оставьте свой номер телефона, и мы перезвоним вам в ближайшее время.</p>
+                <form class="modal__form">
+                    <input type="text" class="modal__input" placeholder="Ваше имя" required>
+                    <input type="tel" class="modal__input" placeholder="Телефон" required>
+                    <button type="submit" class="modal__submit">Заказать звонок</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer__container container">
