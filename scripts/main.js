@@ -7,6 +7,7 @@ import Product from "./Product.js"
 import FounderSlider from "./FounderSlider.js"
 import TimeLine from "./TimeLine.js"
 import Portfolio from "./Portfolio.js"
+import Modal from "./Modal.js"
 
 
 new Header()
@@ -18,6 +19,4 @@ new Product()
 new FounderSlider()
 new TimeLine()
 new Portfolio()
-
-
-
+new Modal()

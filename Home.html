@@ -230,7 +230,7 @@
                             <p>Приходите к нам с вашей идеей очага и наша команда максимвльно вникнет в ваш проект.
                             Мы вместе реализуем все, что вы задумали. “</p>
                         </div>
-                        <button class="founder__button button" type="button">получить консультацию руководителя</button>
+                        <button class="founder__button button" type="button" data-js-modal-open="founder">получить консультацию руководителя</button>
                     </div>
                 </div>
             </div>
@@ -273,7 +273,7 @@
                     </div>
                 </div>
 
-                <button class="realization__btn button">Получить предварительную оценку проекта</button>
+                <button class="realization__btn button" type="button" data-js-modal-open="realization">Получить предварительную оценку проекта</button>
 
             </div>
         </section>
@@ -540,7 +540,7 @@
                     </div>
                 </div>
                 
-                <button class="showrooms__btn button">заказать обратный звонок</button>
+                <button class="showrooms__btn button" data-js-modal-open="showroom">заказать обратный звонок</button>
             </div>
         </section>
     </main>
@@ -654,5 +654,117 @@
             </nav>
         </div>
     </footer>
+
+    <div class="modal" data-js-modal="founder">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" data-js-modal-close aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <div class="modal__header">
+                <h3 class="modal__title">Получить консультацию руководителя</h3>
+                <p class="modal__subtitle">
+                    Оставьте ваши контакты, и руководитель бюро свяжется с вами для детального обсуждения и помощи с вашим проектом
+                </p>
+            </div>
+            
+            <div class="modal__body">
+                <form class="modal__form" action="#" method="POST">
+                    <input class="modal__input" type="text" placeholder="Ваше имя" required>
+                    <input class="modal__input" type="tel" placeholder="Ваш телефон" required>
+                    
+                    <label class="modal__checkbox-label">
+                        <input type="checkbox" required checked>
+                        <span>
+                            Нажимая на кнопку я соглашаюсь с <a href="#">политикой конфиденциальности</a>
+                        </span>
+                    </label>
+                    
+                    <button class="button modal__btn" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-js-modal="showroom">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" data-js-modal-close aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <div class="modal__header">
+                <h3 class="modal__title">Заказать обратный звонок</h3>
+            </div>
+            
+            <div class="modal__body">
+                <form class="modal__form" action="#" method="POST">
+                    <input class="modal__input" type="text" placeholder="Ваше имя" required>
+                    <input class="modal__input" type="tel" placeholder="Ваш телефон" required>
+                    
+                    <label class="modal__checkbox-label">
+                        <input type="checkbox" required checked>
+                        <span>
+                            Нажимая на кнопку я соглашаюсь с <a href="#">политикой конфиденциальности</a>
+                        </span>
+                    </label>
+                    
+                    <button class="button modal__btn" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-js-modal="realization">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" data-js-modal-close aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <div class="modal__header">
+                <h3 class="modal__title">Получить предварительную оценку проекта</h3>
+                <p class="modal__subtitle">
+                    Отправьте ваш проект, и специалисты бюро сделают его предварительную оценку и предложат способы реализации.
+                </p>
+            </div>
+            
+            <div class="modal__body">
+                <form class="modal__form" action="#" method="POST" enctype="multipart/form-data">
+                    <div class="modal__form-grid">
+                        <div class="modal__upload-area">
+                            <input type="file" name="project_file" id="project_file" hidden>
+                            <label for="project_file" style="display: flex; flex-direction: column; align-items: center; gap: 10px; color: #6F6F6F; cursor: pointer;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="21" viewBox="0 0 27 21" fill="none">
+                                    <path d="M16.9667 16.5H21.0833C24.0625 16.5 26.5 14.9626 26.5 12.1C26.5 9.23737 23.6292 7.8121 21.3 7.7C20.8185 3.22316 17.4542 0.5 13.5 0.5C9.7625 0.5 7.35533 2.91 6.56667 5.3C3.31667 5.6 0.5 7.60947 0.5 10.9C0.5 14.1905 3.425 16.5 7 16.5H10.0333" stroke="#939393" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.5 20.5V8.31117M16.5 10.7447L13.5 7.5L10.5 10.7447H16.5Z" stroke="#939393" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span style="font-size: 13px;">Прикрепить файлы</span>
+                            </label>
+                        </div>
+                        <textarea class="modal__input modal__textarea" name="comment" placeholder="Комментарий"></textarea>
+                        <input class="modal__input" type="text" name="name" placeholder="Ваше имя" required>
+                        <input class="modal__input" type="tel" name="phone" placeholder="Ваш телефон" required>
+                        <input class="modal__input" type="email" name="email" placeholder="Ваша почта">
+                    </div>
+
+                    <label class="modal__checkbox-label">
+                        <input type="checkbox" required checked>
+                        <span>Нажимая на кнопку я соглашаюсь с <a href="#">политикой конфиденциальности</a></span>
+                    </label>
+
+                    <button class="modal__btn" type="submit">Отправить</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
