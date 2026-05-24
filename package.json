@@ -8,7 +8,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass-watch": "sass --watch ."
+    "sass-watch": "sass --watch .",
+    "server": "json-server --watch db.json --port 3000",
+    "start": "npm run server"
   },
   "devDependencies": {
     "sass": "^1.99.0"
