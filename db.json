@@ -220,5 +220,37 @@
       "image": "/images/concepts/concepts-20.jpg",
       "features": ["лаконичность", "белое покрытие", "уют"]
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Ирина Новоселова",
+      "email": "admin@artkante.ru",
+      "password": "Admin123!",
+      "role": "admin",
+      "phone": "+7 (495) 000-00-01",
+      "favorites": [],
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Андрей Вафельник",
+      "email": "andrey@artkante.ru",
+      "password": "Designer1!",
+      "role": "designer",
+      "phone": "+7 (495) 000-00-02",
+      "favorites": [],
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Тест Клиент",
+      "email": "client@test.ru",
+      "password": "Client123!",
+      "role": "client",
+      "phone": "+7 (999) 123-45-67",
+      "favorites": [],
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    }
   ]
 }
