@@ -6,8 +6,10 @@ import Product from "./Product.js"
 import FounderSlider from "./FounderSlider.js"
 import TimeLine from "./TimeLine.js"
 import Portfolio from "./Portfolio.js"
+import Auth from "./Auth.js"
 
 (async () => {
+    new Auth()
     new Concepts();
     new Header()
     new Hero()
@@ -16,5 +18,4 @@ import Portfolio from "./Portfolio.js"
     new FounderSlider()
     new TimeLine()
     new Portfolio()
-
 })();
