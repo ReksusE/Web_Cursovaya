@@ -2,11 +2,20 @@ class Favorites {
     constructor() {
         this.API_URL = 'http://localhost:3000';
         this.currentUser = JSON.parse(localStorage.getItem('artkante-current-user') || 'null');
-        this.favorites = new Set(this.currentUser?.favorites || []);
-        this._bindGlobalEvents();
+        
+        const favArray = Array.isArray(this.currentUser?.favorites) ? this.currentUser.favorites : [];
+        this.favorites = new Set(favArray.map(id => Number(id)));
+
+        document.addEventListener('click', async (e) => {
+        const btn = e.target.closest('[data-fav-id]');
+        if (!btn) return;
+        e.preventDefault();
+        e.stopPropagation();
+        const id = parseInt(btn.dataset.favId, 10);
+        await this.toggle(id, btn);
+        });
     }
 
-    /** Переключает статус избранного */
     async toggle(conceptId, btn) {
         if (!this.currentUser) {
         alert('Для добавления в избранное необходимо авторизоваться');
@@ -15,8 +24,9 @@ class Favorites {
         }
 
         const isFav = this.favorites.has(conceptId);
-        const favArray = Array.from(this.favorites);
-        const newFavs = isFav ? favArray.filter(id => id !== conceptId) : [...favArray, conceptId];
+        const newFavs = isFav 
+        ? Array.from(this.favorites).filter(id => id !== conceptId) 
+        : [...this.favorites, conceptId];
 
         try {
         const res = await fetch(`${this.API_URL}/users/${this.currentUser.id}`, {
@@ -24,43 +34,54 @@ class Favorites {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ favorites: newFavs })
         });
-        if (!res.ok) throw new Error('Ошибка сети');
+        
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
         const updatedUser = await res.json();
-        this.favorites = new Set(updatedUser.favorites);
-        this.currentUser.favorites = updatedUser.favorites;
+        this.favorites = new Set((updatedUser.favorites || []).map(id => Number(id)));
+        this.currentUser.favorites = Array.from(this.favorites);
         localStorage.setItem('artkante-current-user', JSON.stringify(this.currentUser));
 
         if (btn) btn.classList.toggle('is-active', !isFav);
-        
-        // Уведомляем остальные компоненты (Concepts, Portfolio и т.д.)
-        window.dispatchEvent(new CustomEvent('favorites:updated', { detail: conceptId }));
+        window.dispatchEvent(new CustomEvent('favorites:updated'));
         } catch (err) {
         console.error('❌ Ошибка сохранения избранного:', err);
         }
     }
 
-    isFavorite(id) { return this.favorites.has(id); }
+    isFavorite(id) { return this.favorites.has(Number(id)); }
 
-    /** Рендерит сетку на странице Favorite.html */
     async renderPage() {
         const grid = document.querySelector('[data-js-favorites-grid]');
-        if (!grid) return;
+        if (!grid) {
+        console.warn('⚠️ Не найден контейнер [data-js-favorites-grid]');
+        return;
+        }
 
         if (this.favorites.size === 0) {
-        grid.innerHTML = `<p style="color: var(--color-gray-alt); grid-column: 1/-1; text-align: center; padding: 50px 0;">В избранном пока пусто</p>`;
+        grid.innerHTML = `<p style="color: var(--color-gray-alt); grid-column: 1/-1; text-align: center; padding: 50px 0;">В избранном пока пусто. Добавьте концепты из каталога.</p>`;
         return;
         }
 
         try {
-        const ids = Array.from(this.favorites).map(id => `id=${id}`).join('&');
-        const res = await fetch(`${this.API_URL}/concepts?${ids}`);
-        const concepts = await res.json();
+        const res = await fetch(`${this.API_URL}/concepts`);
+        if (!res.ok) throw new Error('Ошибка загрузки концептов');
+        const allConcepts = await res.json();
+        
+        const favIds = Array.from(this.favorites);
+
+        // Фильтруем с явным приведением типов
+        const concepts = allConcepts.filter(card => favIds.includes(Number(card.id)));
+
+        if (concepts.length === 0) {
+            grid.innerHTML = `<p style="color: var(--color-gray-alt); grid-column: 1/-1;">Карточки с ID [${favIds.join(', ')}] не найдены в db.json. Проверьте, совпадают ли ID.</p>`;
+            return;
+        }
 
         grid.innerHTML = concepts.map(card => this._createCardHTML(card)).join('');
         } catch (err) {
         console.error('❌ Ошибка загрузки избранного:', err);
-        grid.innerHTML = '<p style="color: var(--color-red); grid-column: 1/-1;">Ошибка загрузки данных</p>';
+        grid.innerHTML = `<p style="color: var(--color-red); grid-column: 1/-1;">Ошибка загрузки. Убедитесь, что запущен <code>npm run server</code></p>`;
         }
     }
 
@@ -79,17 +100,6 @@ class Favorites {
         </article>
         `;
     }
-
-    /** Глобальный делегат кликов по всем сердечкам на сайте */
-    _bindGlobalEvents() {
-        document.addEventListener('click', async (e) => {
-        const btn = e.target.closest('[data-fav-id]');
-        if (!btn) return;
-        e.preventDefault();
-        e.stopPropagation();
-        const id = parseInt(btn.dataset.favId);
-        await this.toggle(id, btn);
-        });
-    }
 }
+
 export default Favorites;

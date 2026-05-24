@@ -7,10 +7,13 @@ import FounderSlider from "./FounderSlider.js"
 import TimeLine from "./TimeLine.js"
 import Portfolio from "./Portfolio.js"
 import Auth from "./Auth.js"
+import Favorites from "./Favorite.js"
 
 (async () => {
+    const favoritesManager = new Favorites();
+
     new Auth()
-    new Concepts();
+    new Concepts(favoritesManager);
     new Header()
     new Hero()
     new TrustSlider()
@@ -18,4 +21,8 @@ import Auth from "./Auth.js"
     new FounderSlider()
     new TimeLine()
     new Portfolio()
+
+    if (document.querySelector('[data-js-favorites-grid]')) {
+        favoritesManager.renderPage();
+    }
 })();
