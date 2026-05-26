@@ -1,4 +1,5 @@
 import Header from "./Header.js"
+import UserPanel from "./UserPanel.js"
 import Hero from "./Hero.js"
 import TrustSlider from "./TrustSlider.js"
 import Concepts from "./Concepts.js"
@@ -15,6 +16,7 @@ import Favorites from "./Favorite.js"
     new Auth()
     new Concepts(favoritesManager);
     new Header()
+    new UserPanel()
     new Hero()
     new TrustSlider()
     new Product()
