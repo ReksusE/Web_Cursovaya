@@ -484,7 +484,6 @@ h2,
   position: relative;
   display: flex;
   align-items: center;
-  flex-direction: column;
   gap: 1.875rem;
 }
 @media (width <= 47.99875rem) {
@@ -519,9 +518,6 @@ h2,
     flex-direction: row;
     gap: 4.0625rem;
   }
-}
-.header {
-  /* Добавьте в конец _header.scss */
 }
 .header__controls {
   display: flex;
@@ -580,59 +576,125 @@ h2,
 .header__user-wrapper {
   position: relative;
 }
-.header__user-dropdown {
+.header__user-btn {
+  background: none;
+  border: none;
+  color: var(--color-light);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all var(--transition-duration);
+}
+@media (any-hover: hover) {
+  .header__user-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-accent-05);
+  }
+}
+@media (any-hover: none) {
+  .header__user-btn:active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-accent-05);
+  }
+}
+.header__user-panel {
   position: absolute;
-  top: calc(100% + 0.75rem);
+  top: calc(100% + 1rem);
   right: 0;
+  width: 17.5rem;
   background: var(--color-dark);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  min-width: 10rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  z-index: 200;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity var(--transition-duration), visibility var(--transition-duration), transform var(--transition-duration);
-  border-radius: 0.5rem;
+  transform: translateY(10px) scale(0.98);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 300;
 }
-.header__user-dropdown.is-active {
+.header__user-panel.is-active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+}
+.header__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem 0 0.5rem;
 }
 .header__user-name {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--color-accent-05);
-  padding-bottom: 0.375rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 0.25rem;
-  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-light);
+}
+.header__user-email {
+  font-size: 0.6875rem;
+  color: var(--color-gray);
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 8.75rem;
+  white-space: nowrap;
 }
-.header__logout-btn {
+.header__panel-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0.25rem 0;
+}
+.header__panel-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-light);
+  text-decoration: none;
   background: none;
   border: none;
-  color: var(--color-gray);
-  font-size: 0.75rem;
   cursor: pointer;
-  text-align: left;
-  padding: 0.25rem 0;
-  transition: color var(--transition-duration);
+  transition: background var(--transition-duration);
+}
+.header__panel-item svg {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.7;
+  transition: opacity var(--transition-duration);
 }
 @media (any-hover: hover) {
-  .header__logout-btn:hover {
+  .header__panel-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .header__panel-item:hover svg {
+    opacity: 1;
+    color: var(--color-accent-05);
+  }
+}
+@media (any-hover: none) {
+  .header__panel-item:active {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .header__panel-item:active svg {
+    opacity: 1;
+    color: var(--color-accent-05);
+  }
+}
+.header__panel-item--logout {
+  color: var(--color-gray);
+}
+@media (any-hover: hover) {
+  .header__panel-item--logout:hover {
     color: var(--color-red);
   }
 }
 @media (any-hover: none) {
-  .header__logout-btn:active {
+  .header__panel-item--logout:active {
     color: var(--color-red);
   }
 }

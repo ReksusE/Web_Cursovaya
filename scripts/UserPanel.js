@@ -1,90 +1,63 @@
 class UserPanel {
-    selectors = {
-        langToggle: '[data-js-lang-toggle]',
-        themeToggle: '[data-js-theme-toggle]',
-        userWrapper: '[data-js-user-wrapper]',
-        dropdown: '[data-js-user-dropdown]',
-        userName: '#header-user-name',
-        logoutBtn: '[data-js-logout]'
-    }
-    stateClasses = { isActive: 'is-active' }
+    constructor(modalManager) {
+        this.modalManager = modalManager;
+        this.wrapper = document.querySelector('[data-js-user-wrapper]');
+        this.btn = document.querySelector('[data-js-user-btn]');
+        this.panel = document.querySelector('[data-js-user-panel]');
+        this.nameEl = document.getElementById('panel-user-name');
+        this.emailEl = document.getElementById('panel-user-email');
+        this.editBtn = document.querySelector('[data-js-open-profile]');
+        this.logoutBtn = document.querySelector('[data-js-logout]');
 
-    constructor() {
-        this.langBtn = document.querySelector(this.selectors.langToggle);
-        this.themeBtn = document.querySelector(this.selectors.themeToggle);
-        this.userWrapper = document.querySelector(this.selectors.userWrapper);
-        this.dropdown = document.querySelector(this.selectors.dropdown);
-        this.userName = document.querySelector(this.selectors.userName);
-        this.logoutBtn = document.querySelector(this.selectors.logoutBtn);
-
-        if (!this.langBtn) return;
+        if (!this.wrapper) return;
         this.init();
     }
 
     init() {
-        this.loadTheme();
-        this.loadLang();
-        this.checkAuth();
+        this.updateUserInfo();
         this.bindEvents();
+        
+        document.addEventListener('click', (e) => {
+        if (!this.wrapper.contains(e.target)) this.close();
+        });
+        document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') this.close();
+        });
     }
 
     bindEvents() {
-        this.themeBtn.addEventListener('click', () => this.toggleTheme());
-        this.langBtn.addEventListener('click', () => this.toggleLang());
-        
-        // Открытие/закрытие дропдауна
-        this.userWrapper?.addEventListener('click', (e) => {
-        if (e.target.closest('[data-js-logout]')) return;
-        this.dropdown?.classList.toggle(this.stateClasses.isActive);
+        this.btn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggle();
         });
 
-        document.addEventListener('click', (e) => {
-        if (!this.userWrapper?.contains(e.target)) {
-            this.dropdown?.classList.remove(this.stateClasses.isActive);
+        this.editBtn?.addEventListener('click', () => {
+        this.close();
+        const user = JSON.parse(localStorage.getItem('artkante-current-user') || 'null');
+        if (!user) {
+            alert('Для редактирования необходимо авторизоваться');
+            window.location.href = '/Authorization.html';
+            return;
         }
+        this.modalManager?.open('profile-modal');
         });
 
         this.logoutBtn?.addEventListener('click', () => this.logout());
     }
 
-    loadTheme() {
-        const saved = localStorage.getItem('artkante-theme') || 'dark';
-        document.documentElement.classList.toggle('light-theme', saved === 'light');
-    }
-    toggleTheme() {
-        const isLight = document.documentElement.classList.toggle('light-theme');
-        localStorage.setItem('artkante-theme', isLight ? 'light' : 'dark');
-    }
+    toggle() { this.panel?.classList.toggle('is-active'); }
+    close() { this.panel?.classList.remove('is-active'); }
 
-    loadLang() {
-        const saved = localStorage.getItem('artkante-lang') || 'ru';
-        this.updateLangUI(saved);
-    }
-    toggleLang() {
-        const current = this.langBtn.textContent.toLowerCase();
-        const next = current === 'ru' ? 'en' : 'ru';
-        localStorage.setItem('artkante-lang', next);
-        this.updateLangUI(next);
-        // Базовая замена текста (для курсовой достаточно)
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-        el.textContent = next === 'en' ? (el.dataset.i18nEn || el.textContent) : (el.dataset.i18nRu || el.textContent);
-        });
-    }
-    updateLangUI(lang) {
-        if (this.langBtn) this.langBtn.textContent = lang.toUpperCase();
-    }
-
-    checkAuth() {
+    updateUserInfo() {
         const user = JSON.parse(localStorage.getItem('artkante-current-user') || 'null');
-        if (this.userName) {
-        this.userName.textContent = user?.email || user?.name || 'Гость';
-        }
+        if (this.nameEl) this.nameEl.textContent = user?.name || 'Гость';
+        if (this.emailEl) this.emailEl.textContent = user?.email || 'Войдите в аккаунт';
     }
 
     logout() {
         localStorage.removeItem('artkante-current-user');
-        this.checkAuth();
-        this.dropdown?.classList.remove(this.stateClasses.isActive);
+        this.updateUserInfo();
+        this.close();
         window.location.href = '/Authorization.html';
     }
 }

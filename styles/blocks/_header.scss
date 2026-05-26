@@ -104,7 +104,6 @@
         position: relative;
         display: flex;
         align-items: center;
-        flex-direction: column;
         gap: rem(30);
 
         @include mobile {
@@ -174,59 +173,101 @@
     html:not(.light-theme) .icon-moon { display: block; }
     html.light-theme .icon-sun { display: block; }
 
-    &__user-wrapper {
-        position: relative;
-    }
+    &__user {
 
-    &__user-dropdown {
-        position: absolute;
-        top: calc(100% + rem(12));
-        right: 0;
-        background: var(--color-dark);
-        border: 1px solid rgba(255,255,255,0.1);
-        padding: rem(12) rem(16);
-        display: flex;
-        flex-direction: column;
-        gap: rem(8);
-        min-width: rem(160);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        z-index: 200;
-        @include hide;
-        transform: translateY(10px);
-        transition: opacity var(--transition-duration), visibility var(--transition-duration), transform var(--transition-duration);
-        border-radius: rem(8);
+        &-wrapper {
+            position: relative;
+        }
 
-        &.is-active {
-            @include show;
-            transform: translateY(0);
+        &-btn {
+            background: none; border: none; color: var(--color-light); cursor: pointer;
+            padding: rem(8); display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; transition: all var(--transition-duration);
+
+            @include hover { 
+                background: rgba(255,255,255,0.1); 
+                color: var(--color-accent-05); 
+            }
+        }
+
+        &-panel {
+            position: absolute; 
+            top: calc(100% + rem(16)); 
+            right: 0; 
+            width: rem(280);
+            background: var(--color-dark); 
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: rem(12); 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            padding: rem(16); 
+            display: flex; 
+            flex-direction: column; 
+            gap: rem(8);
+            @include hide; 
+            transform: translateY(10px) scale(0.98);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 300;
+
+            &.is-active { 
+                @include show; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        &-info { 
+            display: flex; 
+            flex-direction: column; 
+            gap: rem(4); 
+            padding: rem(4) 0 rem(8); 
+        }
+
+        &-name { 
+            font-size: rem(14); 
+            font-weight: 600; 
+            color: var(--color-light); 
+        }
+
+        &-email { 
+            font-size: rem(11); 
+            color: var(--color-gray); 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            white-space: nowrap; 
         }
     }
 
-    &__user-name {
-        font-size: rem(12);
-        font-weight: 400;
-        color: var(--color-accent-05);
-        padding-bottom: rem(6);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        margin-bottom: rem(4);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: rem(140);
+    &__panel-divider { 
+        height: 1px; 
+        background: rgba(255,255,255,0.08); 
+        margin: rem(4) 0; 
     }
 
-    &__logout-btn {
-        background: none;
-        border: none;
-        color: var(--color-gray);
-        font-size: rem(12);
-        cursor: pointer;
-        text-align: left;
-        padding: rem(4) 0;
-        transition: color var(--transition-duration);
+    &__panel-item {
+        display: flex; align-items: center; gap: rem(12); padding: rem(10) rem(12);
+        border-radius: rem(8); font-size: rem(13); color: var(--color-light);
+        text-decoration: none; background: none; border: none; cursor: pointer;
+        transition: background var(--transition-duration);
+        
+        svg { 
+            width: rem(16); 
+            height: rem(16); 
+            opacity: 0.7; 
+            transition: opacity var(--transition-duration); 
+        }
 
-        @include hover {
-            color: var(--color-red);
+        @include hover { 
+            background: rgba(255,255,255,0.05); 
+            svg { 
+                opacity: 1; 
+                color: var(--color-accent-05); 
+            } 
+        }
+        
+        &--logout { 
+            color: var(--color-gray); 
+            @include hover { 
+                color: var(--color-red); 
+            } 
         }
     }
 }
