@@ -102,17 +102,17 @@
 
                 <div class="header__user-wrapper" data-js-user-wrapper>
                     <button class="header__user-btn" data-js-user-btn aria-label="Личный кабинет">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
                     </button>
 
                     <div class="header__user-panel" data-js-user-panel>
-                    <div class="header__user-info">
-                        <span class="header__user-name" id="panel-user-name">Гость</span>
-                        <span class="header__user-email" id="panel-user-email">Войдите в аккаунт</span>
-                    </div>
+                        <div class="header__user-info">
+                            <span class="header__user-name" id="panel-user-name">Гость</span>
+                            <span class="header__user-email" id="panel-user-email">Войдите в аккаунт</span>
+                        </div>
                     <div class="header__panel-divider"></div>
                     
                     <a href="/Favorite.html" class="header__panel-item">
@@ -780,47 +780,61 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <button class="modal__close" type="button" data-js-modal-close aria-label="Закрыть">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 6L6 18M6 6l12 12"/>
-            </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
             </button>
+            
             <div class="modal__header">
-            <h2 class="modal__title">Редактировать профиль</h2>
-            <p class="modal__subtitle">Измените данные вашего аккаунта</p>
+                <h2 class="modal__title">Редактировать профиль</h2>
+                <p class="modal__subtitle">Измените данные вашего аккаунта</p>
             </div>
+
             <div class="modal__body">
-            <form class="modal__form" data-form="profile-edit" action="#" method="post">
-                <div class="auth-field">
-                <label class="auth-field__label" for="edit-name">Имя</label>
-                <input type="text" class="auth-field__input" id="edit-name" required>
-                </div>
-                <div class="auth-field">
-                <label class="auth-field__label" for="edit-email">Email</label>
-                <input type="email" class="auth-field__input" id="edit-email" readonly>
-                </div>
-                <div class="auth-field">
-                <label class="auth-field__label" for="edit-phone">Телефон</label>
-                <input type="tel" class="auth-field__input" id="edit-phone">
-                </div>
-                <div class="auth-field">
-                <label class="auth-field__label" for="edit-password">Новый пароль</label>
-                <input type="password" class="auth-field__input" id="edit-password" placeholder="Оставьте пустым, если не меняете">
-                </div>
-                <div class="auth-field">
-                <label class="auth-field__label" for="edit-password2">Подтвердите пароль</label>
-                <input type="password" class="auth-field__input" id="edit-password2" placeholder="Повторите пароль">
-                </div>
-                <button type="submit" class="auth-submit">
-                <span class="auth-submit__text">Сохранить изменения</span>
-                <span class="auth-submit__spinner"></span>
-                </button>
-            </form>
+                <form class="modal__form" id="profile-edit-form">
+                    <div class="modal__form-grid">
+                        <!-- Имя -->
+                        <div class="auth-field">
+                            <label class="auth-field__label" for="edit-name">Имя</label>
+                            <input class="auth-field__input" type="text" id="edit-name" name="name" required>
+                            <span class="auth-field__error" id="edit-name-error"></span>
+                        </div>
+
+                        <!-- Email (только чтение или с проверкой уникальности) -->
+                        <div class="auth-field">
+                            <label class="auth-field__label" for="edit-email">Email</label>
+                            <input class="auth-field__input" type="email" id="edit-email" name="email" required>
+                            <span class="auth-field__error" id="edit-email-error"></span>
+                        </div>
+
+                        <!-- Телефон -->
+                        <div class="auth-field">
+                            <label class="auth-field__label" for="edit-phone">Телефон</label>
+                            <input class="auth-field__input" type="tel" id="edit-phone" name="phone">
+                            <span class="auth-field__error" id="edit-phone-error"></span>
+                        </div>
+
+                        <!-- Новый пароль -->
+                        <div class="auth-field">
+                            <label class="auth-field__label" for="edit-password">Новый пароль</label>
+                            <input class="auth-field__input" type="password" id="edit-password" name="password" placeholder="Оставьте пустым, если не меняете">
+                            <span class="auth-field__error" id="edit-password-error"></span>
+                        </div>
+
+                        <!-- Подтверждение пароля -->
+                        <div class="auth-field">
+                            <label class="auth-field__label" for="edit-password-confirm">Подтвердите пароль</label>
+                            <input class="auth-field__input" type="password" id="edit-password-confirm" name="passwordConfirm">
+                            <span class="auth-field__error" id="edit-password-confirm-error"></span>
+                        </div>
+                    </div>
+
+                    <button class="modal__btn button" type="submit">Сохранить изменения</button>
+                </form>
             </div>
         </div>
     </div>
 
-    <div id="profile-toast" class="auth-toast">
-        <span id="profile-toast-text"></span>
-    </div>
+    <div id="toast-container" class="toast-container"></div>
 </body>
 </html>

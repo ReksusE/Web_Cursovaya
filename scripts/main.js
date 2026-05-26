@@ -11,14 +11,18 @@ import Auth from "./Auth.js";
 import Favorites from "./Favorite.js";
 import Modal from "./Modal.js";
 import ProfileEdit from "./ProfileEdit.js";
+import Toast from "./Toast.js"; // <-- Импорт
 
 (async () => {
+    const toastManager = new Toast(); // <-- Инициализация
     const favoritesManager = new Favorites();
-    const modalManager = new Modal();             
-    const userPanel = new UserPanel(modalManager); 
-    const profileEdit = new ProfileEdit(modalManager, userPanel); 
-
-    new Auth();
+    const modalManager = new Modal();
+    
+    // Передаем toastManager туда, где он нужен
+    const userPanel = new UserPanel(modalManager);
+    const profileEdit = new ProfileEdit(modalManager, userPanel, toastManager); // <-- Передача
+    const auth = new Auth(toastManager); // <-- Передача (нужно обновить Auth.js)
+    
     new Concepts(favoritesManager);
     new Header();
     new Hero();
