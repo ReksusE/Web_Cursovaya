@@ -304,11 +304,11 @@
   "users": [
     {
       "id": "1",
-      "name": "Ирина Новоселова",
+      "name": "Ирина Н",
       "email": "admin@artkante.ru",
       "password": "Admin123!",
       "role": "admin",
-      "phone": "+7 (495) 000-00-01",
+      "phone": "+7 (495) 000-00-02",
       "favorites": [
         11,
         8,
