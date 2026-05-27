@@ -21,7 +21,7 @@
 
     &__title {
         @include fluid-text(40, 28);
-        color: #fff;
+        color: var(--color-light);
         font-weight: 300;
         text-align: center;
     }
