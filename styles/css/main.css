@@ -3764,6 +3764,9 @@ html.light-theme .footer {
   background: var(--color-surface-2);
   border-top: 1px solid var(--color-border);
 }
+html.light-theme .footer__menu-item path {
+  stroke: var(--color-light);
+}
 html.light-theme .modal__content {
   background: var(--color-surface-1);
   box-shadow: var(--border-shadow), var(--shadow-card);
