@@ -127,7 +127,7 @@
     &-btn {
         width: rem(39);
         height: rem(26);
-        background: rgba(20, 20, 20, 0.65);
+        background: var(--card-btn);
         backdrop-filter: blur(rem(4));
         border: none;
         display: flex;
