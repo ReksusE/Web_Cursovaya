@@ -71,6 +71,7 @@
         &-item {
             display: flex;
             gap: rem(5);
+            align-items: center;
 
             &-push {
                 margin-left: auto;
@@ -88,7 +89,7 @@
                 color: var(--color-accent-05);
 
                 &:hover {
-                    color: #fff;
+                    color: var(--color-light);
                 }
                 
             }
@@ -132,11 +133,11 @@
     &__controls {
         display: flex;
         align-items: center;
-        gap: rem(12);
+        gap: rem(30);
         padding: rem(8) 0;
 
         @include mobile {
-            gap: rem(10);
+            gap: rem(50);
         }
     }
 
@@ -164,14 +165,23 @@
         }
     }
 
-    &__theme-toggle svg {
-        width: rem(40);
-        height: rem(40);
-        transition: opacity var(--transition-duration), transform var(--transition-duration);
+    &__theme-toggle {
+        background: none;
+        border: none;
+        color: var(--color-light);
+        cursor: pointer;
+        padding: rem(6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: color var(--transition-duration), background var(--transition-duration);
+
+        @include hover {
+            color: var(--color-accent-05);
+            background: rgba(255,255,255,0.05);
+        }
     }
-    .icon-moon, .icon-sun { display: none; }
-    html:not(.light-theme) .icon-moon { display: block; }
-    html.light-theme .icon-sun { display: block; }
 
     &__user {
 
@@ -272,3 +282,17 @@
     }
 }
 
+.icon-moon, .icon-sun { 
+    display: none; 
+    width: 24px;
+    height: 24px;
+}
+
+
+html:not(.light-theme) .icon-moon { 
+    display: block; 
+}
+
+html.light-theme .icon-sun { 
+    display: block; 
+}

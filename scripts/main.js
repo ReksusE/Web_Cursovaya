@@ -11,10 +11,14 @@ import Auth from "./Auth.js";
 import Favorites from "./Favorite.js";
 import Modal from "./Modal.js";
 import ProfileEdit from "./ProfileEdit.js";
-import Toast from "./Toast.js"; // <-- Импорт
+import Toast from "./Toast.js";
+import ThemeManager from "./ThemeManager.js";
+import LangManager from "./LangManager.js";
 
 (async () => {
-    const toastManager = new Toast(); // <-- Инициализация
+    const toastManager = new Toast();
+    const themeManager = new ThemeManager();
+    const langManager = new LangManager(); 
     const favoritesManager = new Favorites();
     const modalManager = new Modal();
     

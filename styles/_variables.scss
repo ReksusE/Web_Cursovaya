@@ -28,3 +28,23 @@
     --border-shadow: 1px 1px 2px 0 rgba(43, 43, 42, 0.30) inset, -1px -1px 2px 0 rgba(11, 11, 10, 0.50) inset, -7px 7px 14px 0 rgba(11, 11, 10, 0.20), 7px -7px 14px 0 rgba(11, 11, 10, 0.20), -7px -7px 14px 0 rgba(43, 43, 42, 0.90), 7px 7px 18px 0 rgba(11, 11, 10, 0.90);
     
 }
+
+html.light-theme {
+    --color-light: #1A1A18;
+    
+    --color-dark: #FFFFFF;
+    --color-dark-alt: #F5F5F5;
+    
+    --color-accent-05: #0074f0;
+    --color-accent-10: #025ec0;
+    --color-accent: #2895fb;
+    --color-accent-alt: #0070f0;
+
+    --color-red: #06a2a2;
+
+    --color-gray: #949494;
+    --color-gray-alt: #858585;
+
+
+    --border-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1) inset, -1px -1px 2px 0 rgba(255, 255, 255, 0.8) inset, -7px 7px 14px 0 rgba(0, 0, 0, 0.05), 7px -7px 14px 0 rgba(0, 0, 0, 0.05);
+}
