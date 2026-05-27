@@ -1,0 +1,341 @@
+{
+  "concepts": [
+    {
+      "id": "1",
+      "title": "Quadra Wall",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Лофт",
+      "glass": "Стекло",
+      "material": "Сталь",
+      "image": "/images/concepts/concepts-1.png",
+      "features": [
+        "экологичное",
+        "второй свет",
+        "для бруса"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Eco Minimal",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Минимализм",
+      "glass": "Без стекла",
+      "material": "Камень",
+      "image": "/images/concepts/concepts-2.png",
+      "features": [
+        "безопасность",
+        "компактность",
+        "тишина"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Classic Luxe",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Классика",
+      "glass": "Стекло",
+      "material": "Керамика",
+      "image": "/images/concepts/concepts-3.jpg",
+      "features": [
+        "теплоотдача",
+        "авто-розжиг",
+        "премиум"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Urban Fire",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Модерн",
+      "glass": "Стекло",
+      "material": "Металл",
+      "image": "/images/concepts/concepts-4.png",
+      "features": [
+        "стильный дизайн",
+        "без дыма",
+        "быстрый монтаж"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Wood Harmony",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Скандинавский",
+      "glass": "Без стекла",
+      "material": "Дерево",
+      "image": "/images/concepts/concepts-5.jpg",
+      "features": [
+        "уют",
+        "эко-материалы",
+        "надежность"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Tech Flame",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Хай-тек",
+      "glass": "Стекло",
+      "material": "Стекло",
+      "image": "/images/concepts/concepts-6.jpg",
+      "features": [
+        "умный дом",
+        "дистанционное",
+        "безопасно"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Rustic Stone",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Рустик",
+      "glass": "Стекло",
+      "material": "Камень",
+      "image": "/images/concepts/concepts-7.jpg",
+      "features": [
+        "массивность",
+        "атмосфера",
+        "долговечность"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Slim Line",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Минимализм",
+      "glass": "Стекло",
+      "material": "Сталь",
+      "image": "/images/concepts/concepts-8.jpg",
+      "features": [
+        "тонкий корпус",
+        "эргономика",
+        "легкость"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Gold Series",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Классика",
+      "glass": "Стекло",
+      "material": "Латунь",
+      "image": "/images/concepts/concepts-9.jpg",
+      "features": [
+        "статус",
+        "декор",
+        "тепло"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Black Steel",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Лофт",
+      "glass": "Без стекла",
+      "material": "Металл",
+      "image": "/images/concepts/concepts-10.jpg",
+      "features": [
+        "брутальность",
+        "акцент",
+        "стиль"
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Infinity",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Хай-тек",
+      "glass": "Стекло",
+      "material": "Стекло",
+      "image": "/images/concepts/concepts-11.jpg",
+      "features": [
+        "обзор 360",
+        "визуальный эффект",
+        "modern"
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Cube Mini",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Скандинавский",
+      "glass": "Стекло",
+      "material": "Керамика",
+      "image": "/images/concepts/concepts-12.jpg",
+      "features": [
+        "компактный",
+        "мобильный",
+        "уютный"
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Terra",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Рустик",
+      "glass": "Без стекла",
+      "material": "Камень",
+      "image": "/images/concepts/concepts-13.jpg",
+      "features": [
+        "природные формы",
+        "натуральность",
+        "тепло"
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Nova Wall",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Модерн",
+      "glass": "Стекло",
+      "material": "Сталь",
+      "image": "/images/concepts/concepts-14.jpg",
+      "features": [
+        "настенный",
+        "экономия места",
+        "красота"
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Grand Hearth",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Классика",
+      "glass": "Стекло",
+      "material": "Мрамор",
+      "image": "/images/concepts/concepts-15.jpg",
+      "features": [
+        "роскошь",
+        "большой портал",
+        "уют"
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Steel Orbit",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Лофт",
+      "glass": "Стекло",
+      "material": "Металл",
+      "image": "/images/concepts/concepts-16.jpg",
+      "features": [
+        "подвесной",
+        "необычно",
+        "стильно"
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Stone Peak",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Рустик",
+      "glass": "Без стекла",
+      "material": "Камень",
+      "image": "/images/concepts/concepts-17.jpg",
+      "features": [
+        "мощь",
+        "декоративность",
+        "качество"
+      ]
+    },
+    {
+      "id": "18",
+      "title": "Glass Box",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Минимализм",
+      "glass": "Стекло",
+      "material": "Стекло",
+      "image": "/images/concepts/concepts-18.jpg",
+      "features": [
+        "прозрачность",
+        "воздушность",
+        "стиль"
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Art Flame",
+      "category": "Загородный дом",
+      "fuel": "Биоэтанол",
+      "style": "Модерн",
+      "glass": "Стекло",
+      "material": "Керамика",
+      "image": "/images/concepts/concepts-19.jpg",
+      "features": [
+        "арт-объект",
+        "яркий дизайн",
+        "премиум"
+      ]
+    },
+    {
+      "id": "20",
+      "title": "Nordic Fire",
+      "category": "Городская квартира",
+      "fuel": "Биоэтанол",
+      "style": "Скандинавский",
+      "glass": "Стекло",
+      "material": "Сталь",
+      "image": "/images/concepts/concepts-20.jpg",
+      "features": [
+        "лаконичность",
+        "белое покрытие",
+        "уют"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Ирина Н",
+      "email": "admin@artkante.ru",
+      "password": "Admin123!",
+      "role": "admin",
+      "phone": "+7 (495) 000-00-02",
+      "favorites": [
+        11,
+        8,
+        16
+      ],
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "name": "Андрей Вафельник",
+      "email": "andrey@artkante.ru",
+      "password": "Designer1!",
+      "role": "designer",
+      "phone": "+7 (495) 000-00-02",
+      "favorites": [],
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "name": "Тест Клиент",
+      "email": "client@test.ru",
+      "password": "Client123!",
+      "role": "client",
+      "phone": "+7 (999) 123-45-67",
+      "favorites": [],
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

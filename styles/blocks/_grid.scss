@@ -1,0 +1,33 @@
+@use '../helpers' as *;
+
+.grid-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: rem(30);
+    column-gap: rem(50);
+
+    & .is-hidden {
+        display: none;
+    }
+
+    @include laptop {
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(25);
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(20);
+    }
+}
+
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(75);
+    column-gap: rem(100);
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
