@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/css/main.css">
-    <script src="./Scripts/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="/styles/css/main.css">
+    <script src="/Scripts/main.js" type="module" defer></script>
 </head>
 <body>
     <header class="header" data-js-header>
@@ -22,13 +22,13 @@
                 <nav class="header__menu header__menu-top">
                     <ul class="header__menu-list">
                         <li class="header__menu-item">
-                            <a href="/Philosophy.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-philosophy">Философия</a>
+                            <a href="//Pages/Philosophy.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-philosophy">Философия</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="/Project.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-design">Проектирование</a>
+                            <a href="/Pages/Project.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-design">Проектирование</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="/Portfolio.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-portfolio">Портфолио</a>
+                            <a href="/Pages/Portfolio.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-portfolio">Портфолио</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="/" class="header__menu-link header__menu-link-accent" data-i18n="nav-inspiration">Вдохновение</a>
@@ -37,7 +37,7 @@
                             <a href="/" class="header__menu-link header__menu-link-accent" data-i18n="nav-contacts">Контакты</a>
                         </li>
                         <li class="header__menu-item header__menu-item-push">
-                            <a href="/Favorite.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-favorites">Избранное</a>
+                            <a href="/Pages/Favorite.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-favorites">Избранное</a>
                         </li>
                     </ul>
                 </nav>
@@ -121,7 +121,7 @@
                         </div>
                     <div class="header__panel-divider"></div>
                     
-                    <a href="/Favorite.html" class="header__panel-item">
+                    <a href="/Pages/Favorite.html" class="header__panel-item">
                         <svg width="16" height="16" viewBox="0 0 17 17" fill="currentColor"><path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 -0.0004826 1.63424 9.06402e-08 4.66483C0.000482782 7.69542 4.3589 13.8129 8.7424 16.9613C8.88856 16.9613 9.03135 16.9148 9.1522 16.8278C13.5352 13.6794 16.9991 7.13097 17 4.66483C17.0009 2.19869 15.5578 0 13.1555 0Z"/></svg>
                         Избранное
                     </a>
@@ -155,110 +155,99 @@
     </header>
 
     <main>
-        <section class="favorites">
-            <div class="favorites__container container">
-                <h1 class="favorites__title">Моя подборка</h1>
-                <div class="favorites__group">
-                    <div class="favorites__header">
-                        <span class="favorites__header-label">Проекты</span>
-                        <a href="#" class="favorites__header-share">
-                            <span class="icon-share product__icon"></span>
-                            Поделиться этой подборкой
-                        </a>
-                    </div>
-                    <div class="favorites__grid grid-card" data-js-favorites-grid>
-                        
+        <section class="concepts" data-js-concepts>
+            <div class="concepts__container container">
+                <nav class="concepts__breadcrumbs">
+                    <a href="/Home.html" class="concepts__breadcrumbs-list">Главная</a>
+                    <a href="/Concept.html" class="concepts__breadcrumbs-list">Концепты</a>
+                </nav>
+
+                <div class="concepts__filters">
+                <!-- 1. Назначение -->
+                <div class="concepts__filters-group" data-filter-key="category">
+                    <button type="button" class="concepts__filters-btn" data-js-filter-btn>
+                    Назначение очага
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    </button>
+                    <div class="concepts__dropdown-list">
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="category" data-filter-value="Загородный дом">Загородный дом</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="category" data-filter-value="Городская квартира">Городская квартира</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="category" data-filter-value="Общественные пространства">Общественные пространства</div>
                     </div>
                 </div>
 
-                <div class="favorites__group">
-                    <div class="favorites__header">
-                        <span class="favorites__header-label">Вдохновение</span>
-                        <a href="#" class="favorites__header-share">
-                            <span class="icon-share product__icon"></span>
-                            Поделиться этой подборкой
-                        </a>
+                <!-- 2. Вид топлива -->
+                <div class="concepts__filters-group" data-filter-key="fuel">
+                    <button type="button" class="concepts__filters-btn" data-js-filter-btn>
+                    Вид топлива
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    </button>
+                    <div class="concepts__dropdown-list">
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="fuel" data-filter-value="Дрова">Дрова</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="fuel" data-filter-value="Биоэтанол">Биоэтанол</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="fuel" data-filter-value="Газ">Газ</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="fuel" data-filter-value="Электричество">Электричество</div>
                     </div>
-                    <div class="favorites__grid grid-card">
-                        <article class="card" data-js-concepts-card>
-                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
-                    
-                            <div class="card-ui">
-                                <div class="card-top">
-                                <span class="card-tag">Биотопливо</span>
-                                    <div class="card-actions">
-                                        <button
-                                        class="card-btn card-btn--heart is-active"
-                                        type="button"
-                                        aria-label="В избранное">
-                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
-                                            </svg>
-                                        </button>
-                                        <button
-                                        class="card-btn card-btn--share"
-                                        type="button"
-                                        aria-label="Поделиться"
-                                        >
-                                            <span class="icon-share favorites__icon"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="card" data-js-concepts-card>
-                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
-                    
-                            <div class="card-ui">
-                                <div class="card-top">
-                                <span class="card-tag">Биотопливо</span>
-                                    <div class="card-actions">
-                                        <button
-                                        class="card-btn card-btn--heart is-active"
-                                        type="button"
-                                        aria-label="В избранное">
-                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
-                                            </svg>
-                                        </button>
-                                        <button
-                                        class="card-btn card-btn--share"
-                                        type="button"
-                                        aria-label="Поделиться"
-                                        >
-                                            <span class="icon-share favorites__icon"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="card" data-js-concepts-card>
-                            <img class="card-image" src="/images/categories/categories-1.png" alt="Концепт 1">
-                    
-                            <div class="card-ui">
-                                <div class="card-top">
-                                <span class="card-tag">Биотопливо</span>
-                                    <div class="card-actions">
-                                        <button
-                                        class="card-btn card-btn--heart is-active"
-                                        type="button"
-                                        aria-label="В избранное">
-                                            <svg class="icon-heart" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 0 1.63424 0 4.66483C0 7.69542 4.3589 13.8129 8.7424 16.9613C13.5352 13.6794 17 7.13097 17 4.66483C17 2.19869 15.5578 0 13.1555 0Z"/>
-                                            </svg>
-                                        </button>
-                                        <button
-                                        class="card-btn card-btn--share"
-                                        type="button"
-                                        aria-label="Поделиться"
-                                        >
-                                            <span class="icon-share favorites__icon"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                </div>
+
+                <!-- 3. Стиль -->
+                <div class="concepts__filters-group" data-filter-key="style">
+                    <button type="button" class="concepts__filters-btn" data-js-filter-btn>
+                    Стиль
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    </button>
+                    <div class="concepts__dropdown-list">
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="style" data-filter-value="Лофт">Лофт</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="style" data-filter-value="Минимализм">Минимализм</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="style" data-filter-value="Классика">Классика</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="style" data-filter-value="Скандинавский">Скандинавский</div>
                     </div>
+                </div>
+
+                <!-- 4. Выбор по стеклу -->
+                <div class="concepts__filters-group" data-filter-key="glass">
+                    <button type="button" class="concepts__filters-btn" data-js-filter-btn>
+                    Выбор по стеклу
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    </button>
+                    <div class="concepts__dropdown-list">
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="glass" data-filter-value="Стекло">Прямое/Угловое стекло</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="glass" data-filter-value="Без стекла">Без стекла</div>
+                    </div>
+                </div>
+
+                <!-- 5. Материал облицовки -->
+                <div class="concepts__filters-group" data-filter-key="material">
+                    <button type="button" class="concepts__filters-btn" data-js-filter-btn>
+                    Материал облицовки
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    </button>
+                    <div class="concepts__dropdown-list">
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="material" data-filter-value="Камень">Камень</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="material" data-filter-value="Керамика">Изразец</div>
+                    <div class="concepts__dropdown-item" data-js-filter-value data-filter-key="material" data-filter-value="Сталь">Металл</div>
+                    </div>
+                </div>
+
+                <button type="button" class="concepts__filters-reset">Сбросить</button>
+                </div>
+
+                <div class="concepts__grid grid-card" data-js-concepts-grid>
+                    <p class="concepts__loading" style="color: var(--color-gray-alt); font-size: 1rem;">Загрузка концептов...</p>
+                </div>
+
+                <div class="concepts__expandable-wrap">
+                    <button type="button" class="concepts__expandable" data-js-concepts-expandable>Показать ещё</button>
                 </div>
             </div>
         </section>
