@@ -107,6 +107,11 @@
         align-items: center;
         gap: rem(30);
 
+        @include tablet {
+            gap: rem(15);
+            flex-direction: column;
+        }
+
         @include mobile {
             display: flex;
             flex-direction: row;
@@ -136,7 +141,13 @@
         gap: rem(30);
         padding: rem(8) 0;
 
+        @include tablet {
+            gap: rem(15);
+            flex-direction: column;
+        }
+
         @include mobile {
+            flex-direction: row;
             gap: rem(50);
         }
     }

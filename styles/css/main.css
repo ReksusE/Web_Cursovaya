@@ -501,6 +501,12 @@ h2,
   align-items: center;
   gap: 1.875rem;
 }
+@media (width <= 63.99875rem) {
+  .header__side {
+    gap: 0.9375rem;
+    flex-direction: column;
+  }
+}
 @media (width <= 47.99875rem) {
   .header__side {
     display: flex;
@@ -540,8 +546,15 @@ h2,
   gap: 1.875rem;
   padding: 0.5rem 0;
 }
+@media (width <= 63.99875rem) {
+  .header__controls {
+    gap: 0.9375rem;
+    flex-direction: column;
+  }
+}
 @media (width <= 47.99875rem) {
   .header__controls {
+    flex-direction: row;
     gap: 3.125rem;
   }
 }

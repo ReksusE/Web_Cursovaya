@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/css/main.css">
-    <script src="./Scripts/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="/styles/css/main.css">
+    <script src="/Scripts/main.js" type="module" defer></script>
 </head>
 <body>
     <header class="header" data-js-header>
@@ -22,13 +22,13 @@
                 <nav class="header__menu header__menu-top">
                     <ul class="header__menu-list">
                         <li class="header__menu-item">
-                            <a href="/Philosophy.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-philosophy">Философия</a>
+                            <a href="//Pages/Philosophy.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-philosophy">Философия</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="/Project.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-design">Проектирование</a>
+                            <a href="/Pages/Project.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-design">Проектирование</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="/Portfolio.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-portfolio">Портфолио</a>
+                            <a href="/Pages/Portfolio.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-portfolio">Портфолио</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="/" class="header__menu-link header__menu-link-accent" data-i18n="nav-inspiration">Вдохновение</a>
@@ -37,7 +37,7 @@
                             <a href="/" class="header__menu-link header__menu-link-accent" data-i18n="nav-contacts">Контакты</a>
                         </li>
                         <li class="header__menu-item header__menu-item-push">
-                            <a href="/Favorite.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-favorites">Избранное</a>
+                            <a href="/Pages/Favorite.html" class="header__menu-link header__menu-link-accent" data-i18n="nav-favorites">Избранное</a>
                         </li>
                     </ul>
                 </nav>
@@ -121,7 +121,7 @@
                         </div>
                     <div class="header__panel-divider"></div>
                     
-                    <a href="/Favorite.html" class="header__panel-item">
+                    <a href="/Pages/Favorite.html" class="header__panel-item">
                         <svg width="16" height="16" viewBox="0 0 17 17" fill="currentColor"><path d="M13.1555 0C10.1995 0 8.7424 3.08387 8.7424 3.08387C8.7424 3.08387 7.28533 0 4.32931 0C1.92697 0 -0.0004826 1.63424 9.06402e-08 4.66483C0.000482782 7.69542 4.3589 13.8129 8.7424 16.9613C8.88856 16.9613 9.03135 16.9148 9.1522 16.8278C13.5352 13.6794 16.9991 7.13097 17 4.66483C17.0009 2.19869 15.5578 0 13.1555 0Z"/></svg>
                         Избранное
                     </a>
@@ -155,350 +155,316 @@
     </header>
 
     <main>
-        <section class="hero" data-js-hero>
-            <div class="hero__container container">
-                <div class="hero__inner">
-                    <div class="hero__bg-wrapper">
-                        <div class="hero__bg is-active" style="background-image: url('/images/hero/hero__bg.jpg');" data-js-hero-slide></div>
-                        <div class="hero__bg" style="background-image: url('/images/hero/hero__bg2.jpg');" data-js-hero-slide></div>
-                        <div class="hero__bg" style="background-image: url('/images/hero/hero__bg3.jpg');" data-js-hero-slide></div>
-                        <div class="hero__bg" style="background-image: url('/images/hero/hero__bg4.jpg');" data-js-hero-slide></div>
-                        <div class="hero__bg" style="background-image: url('/images/hero/hero__bg5.jpg');" data-js-hero-slide></div>
-                    </div>
-
-                    <div class="hero__content">
-                        <div class="hero__title-wrapper">
-                            <h1 class="hero__title">
-                                <span class="hero__title-bold">Печи Камины Барбекю</span>
-                                <span class="hero__title-light">под ключ</span>
-                            </h1>
-                            <p class="hero__subtitle">проектирование архитектура инженерия монтаж</p>
-                        </div>
-
-                        <div class="hero__slogan-wrapper">
-                            <span class="hero__slogan">С нами легко внедряются проекты</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__indicators">
-                    <span class="hero__indicators-line is-active" data-js-hero-dot></span>
-                    <span class="hero__indicators-line" data-js-hero-dot></span>
-                    <span class="hero__indicators-line" data-js-hero-dot></span>
-                    <span class="hero__indicators-line" data-js-hero-dot></span>
-                    <span class="hero__indicators-line" data-js-hero-dot></span>
-                </div>
-            </div>
-        </section>
-
-        <section class="categories">
-            <div class="categories__container container">
-                <div class="categories__list">
-                    <a href="#" class="categories__item">
-                        <div class="categories__image">
-                            <img src="/images/categories/categories-1.png" alt="Загородный дом" width="300" height="574">
-                        </div>
-                        <h3 class="categories__title">Загородный дом</h3>
-                    </a>
-                    <a href="#" class="categories__item">
-                        <div class="categories__image">
-                            <img src="/images/categories/categories-2.png" alt="Городская квартира">
-                        </div>
-                        <h3 class="categories__title">Городская квартира</h3>
-                    </a>
-                    <a href="#" class="categories__item">
-                        <div class="categories__image">
-                            <img src="/images/categories/categories-3.png" alt="Общественные пространства">
-                        </div>
-                        <h3 class="categories__title">Общественные пространства</h3>
-                    </a>
-                    <a href="#" class="categories__item">
-                        <div class="categories__image">
-                            <img src="/images/categories/categories-4.png" alt="Облицовка">
-                        </div>
-                        <h3 class="categories__title">Облицовка</h3>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="founder">
-            <div class="founder__container container">
-                <div class="founder__inner">
-                    <div class="founder__image-wrapper">
-                        <picture>
-                            <source srcset="/images/founder/founder-mobile.jpg" media="(max-width: 1024px)">
-
-                            <img
-                            class="founder__image"
-                            src="/images/founder/founder.jpg"
-                            alt="Ирина Новоселова"
-                            width="390"
-                            height="517"
+        <section class="portfolio">
+            <div class="portfolio__container container">
+                <h1 class="portfolio__title">Портфолио</h1>
+                <div class="grid-2-cols">
+                    <article class="portfolio__card card" data-js-portfolio-card>
+                        <h3 class="portfolio__card-title">Камин “Белая Королева”</h3>
+                        <div class="portfolio__card-visuals">
+                            <img 
+                            src="/images/categories/categories-3.png" 
+                            alt="Камин Белая Королева" 
+                            class="portfolio__card-main-img"
+                            data-js-portfolio-main-img
                             >
-                        </picture>
-                    </div>
-                    <div class="founder__content">
-                        <div class="founder__text">
-                            <span class="founder__role">основатель и руководитель </span>
-                            <h2 class="founder__name">Ирина Новоселова</h2>
-                            <p>“Уже более 10 лет я вместе с командой разрабатываю и реализовываю проекты в сфере каминов и печей.</p>
-                            <p>Приходите к нам с вашей идеей очага и наша команда максимвльно вникнет в ваш проект.
-                            Мы вместе реализуем все, что вы задумали. “</p>
-                        </div>
-                        <button class="founder__button button" type="button" data-js-modal-open="founder">получить консультацию руководителя</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="realization">
-            <div class="realization__container container">
-                <div class="realization__inner">
-                    <h2 class="realization__title">Комплексная реализация проекта<br>на любом этапе строительства</h2>
-
-                    <div class="realization__list">
-                        <article class="realization__item">
-                            <div class="realization__number">1</div>
-                            <div class="realization__content">
-                                <h3 class="realization__subtitle">Проектирование</h3>
-                                <p class="realization__text">Весь комплекс проектных работ предоставляем в виде альбома, включающего в себя подробные визуализации, монтажные схемы, инженерные системы, разрезы и сметный расчет.</p>
+                            <div class="portfolio__card-thumbs">
+                                <img src="/images/categories/categories-1.png" alt="Deteil-1" class="portfolio__card-thumb" data-js-portfolio-thumb>
+                                <img src="/images/categories/categories-3.png" alt="Deteil-1" class="portfolio__card-thumb is-active" data-js-portfolio-thumb>
+                                <img src="/images/categories/categories-2.png" alt="Deteil-1" class="portfolio__card-thumb" data-js-portfolio-thumb>
+                                <img src="/images/categories/categories-4.png" alt="Deteil-1" class="portfolio__card-thumb" data-js-portfolio-thumb>
                             </div>
-                        </article>
-                        <article class="realization__item">
-                            <div class="realization__number">2</div>
-                            <div class="realization__content">
-                                <h3 class="realization__subtitle">Комплектация под ключ</h3>
-                                <p class="realization__text">В работе используем специализированные материалы для печного строительства от производителей с многолетней репутацией на рынке.</p>
-                            </div>
-                        </article>
-                        <article class="realization__item">
-                            <div class="realization__number">3</div>
-                            <div class="realization__content">
-                                <h3 class="realization__subtitle">Монтаж</h3>
-                                <p class="realization__text">Быстро и качественно собираем конструкции, всегда находимся на связи и согласовываем каждую деталь с руководителем проекта.</p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="realization__image">
-                        <img 
-                        src="/images/realisation/triangle.svg" 
-                        alt="triangle"
-                        >
-                    </div>
-                </div>
-
-                <button class="realization__btn button" type="button" data-js-modal-open="realization">Получить предварительную оценку проекта</button>
-
-            </div>
-        </section>
-
-        <section class="trust" data-js-trust>
-            <div class="trust__container container">
-                
-                <h2 class="trust__title">Нам доверяют</h2>
-
-                <div class="trust__navigation">
-                    <button class="trust__arrow trust__arrow--prev" aria-label="Назад" data-js-trust-prev>
-                        <img src="/icons/trust/arrow-left.svg" alt="">
-                    </button>
-                    <button class="trust__arrow trust__arrow--next" aria-label="Вперед" data-js-trust-next>
-                        <img src="/icons/trust/arrow-right.svg" alt="">
-                    </button>
-                </div>
-
-                <div class="trust__slider" data-js-trust-slider>
-                    <!-- Карточка 1 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-1.png" alt="Андрей Вафельник" loading="lazy">
-                        </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Андрей Вафельник</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/web.svg" alt="Website">
-                                </a>
+                            <div class="portfolio__card-nav">
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-prev aria-label="Назад">
+                                    <img src="/icons/trust/arrow-left.svg" alt="←">
+                                </button>
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-next aria-label="Вперёд">
+                                    <img src="/icons/trust/arrow-right.svg" alt="→">
+                                </button>
                             </div>
                         </div>
+                        <div class="portfolio__card-actions">
+                            <button class="portfolio__card-btn" data-js-portfolio-fav>
+                                <span class="icon-favorite favorites__icon"></span>
+                                Добавить в избранное
+                            </button>
+                            <button class="portfolio__card-btn">
+                                <span class="icon-share favorites__icon"></span>
+                                Поделиться
+                            </button>
+                        </div>
+                        <div class="portfolio__card-description">
+                                <p>Делам визуализации и рабочие чертежи в программах: ArchiCad, 3Ds Max, Revit, Palette Cad, Inventor. Предоставляем 3д модель для интеграции в проект, работаем с BIM
+                                </p>
+                            </div>
                     </article>
-
-                    <!-- Карточка 2 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-2.png" alt="Виктор Приходько" loading="lazy">
-                        </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/web.svg" alt="Website">
-                                </a>
+                    <article class="portfolio__card card">
+                        <h3 class="portfolio__card-title">Камин “Белая Королева”</h3>
+                        <div class="portfolio__card-visuals">
+                            <img 
+                            src="/images/categories/categories-3.png" 
+                            alt="Камин Белая Королева" 
+                            class="portfolio__card-main-img"
+                            >
+                            <div class="portfolio__card-thumbs">
+                                <img src="/images/categories/categories-1.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-3.png" alt="Deteil-1" class="portfolio__card-thumb is-active">
+                                <img src="/images/categories/categories-2.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-4.png" alt="Deteil-1" class="portfolio__card-thumb">
+                            </div>
+                            <div class="portfolio__card-nav">
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-prev aria-label="Назад">
+                                    <img src="/icons/trust/arrow-left.svg" alt="←">
+                                </button>
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-next aria-label="Вперёд">
+                                    <img src="/icons/trust/arrow-right.svg" alt="→">
+                                </button>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Карточка 3 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-3.png" alt="Виктор Приходько" loading="lazy">
+                        <div class="portfolio__card-actions">
+                            <button class="portfolio__card-btn">
+                                <span class="icon-favorite favorites__icon"></span>
+                                Добавить в избранное
+                            </button>
+                            <button class="portfolio__card-btn">
+                                <span class="icon-share favorites__icon"></span>
+                                Поделиться
+                            </button>
                         </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
+                        <div class="portfolio__card-description">
+                                <p>Делам визуализации и рабочие чертежи в программах: ArchiCad, 3Ds Max, Revit, Palette Cad, Inventor. Предоставляем 3д модель для интеграции в проект, работаем с BIM
+                                </p>
+                            </div>
+                    </article>
+                    <article class="portfolio__card card">
+                        <h3 class="portfolio__card-title">Камин “Белая Королева”</h3>
+                        <div class="portfolio__card-visuals">
+                            <img 
+                            src="/images/categories/categories-3.png" 
+                            alt="Камин Белая Королева" 
+                            class="portfolio__card-main-img"
+                            >
+                            <div class="portfolio__card-thumbs">
+                                <img src="/images/categories/categories-1.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-3.png" alt="Deteil-1" class="portfolio__card-thumb is-active">
+                                <img src="/images/categories/categories-2.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-4.png" alt="Deteil-1" class="portfolio__card-thumb">
+                            </div>
+                            <div class="portfolio__card-nav">
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-prev aria-label="Назад">
+                                    <img src="/icons/trust/arrow-left.svg" alt="←">
+                                </button>
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-next aria-label="Вперёд">
+                                    <img src="/icons/trust/arrow-right.svg" alt="→">
+                                </button>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Карточка 4 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-4.png" alt="Виктор Приходько" loading="lazy">
+                        <div class="portfolio__card-actions">
+                            <button class="portfolio__card-btn">
+                                <span class="icon-favorite favorites__icon"></span>
+                                Добавить в избранное
+                            </button>
+                            <button class="portfolio__card-btn">
+                                <span class="icon-share favorites__icon"></span>
+                                Поделиться
+                            </button>
                         </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/web.svg" alt="Instagram">
-                                </a>
+                        <div class="portfolio__card-description">
+                                <p>Делам визуализации и рабочие чертежи в программах: ArchiCad, 3Ds Max, Revit, Palette Cad, Inventor. Предоставляем 3д модель для интеграции в проект, работаем с BIM
+                                </p>
+                            </div>
+                    </article>
+                    <article class="portfolio__card card">
+                        <h3 class="portfolio__card-title">Камин “Белая Королева”</h3>
+                        <div class="portfolio__card-visuals">
+                            <img 
+                            src="/images/categories/categories-3.png" 
+                            alt="Камин Белая Королева" 
+                            class="portfolio__card-main-img"
+                            >
+                            <div class="portfolio__card-thumbs">
+                                <img src="/images/categories/categories-1.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-3.png" alt="Deteil-1" class="portfolio__card-thumb is-active">
+                                <img src="/images/categories/categories-2.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-4.png" alt="Deteil-1" class="portfolio__card-thumb">
+                            </div>
+                            <div class="portfolio__card-nav">
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-prev aria-label="Назад">
+                                    <img src="/icons/trust/arrow-left.svg" alt="←">
+                                </button>
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-next aria-label="Вперёд">
+                                    <img src="/icons/trust/arrow-right.svg" alt="→">
+                                </button>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Карточка 5 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-1.png" alt="Виктор Приходько" loading="lazy">
+                        <div class="portfolio__card-actions">
+                            <button class="portfolio__card-btn">
+                                <span class="icon-favorite favorites__icon"></span>
+                                Добавить в избранное
+                            </button>
+                            <button class="portfolio__card-btn">
+                                <span class="icon-share favorites__icon"></span>
+                                Поделиться
+                            </button>
                         </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
+                        <div class="portfolio__card-description">
+                                <p>Делам визуализации и рабочие чертежи в программах: ArchiCad, 3Ds Max, Revit, Palette Cad, Inventor. Предоставляем 3д модель для интеграции в проект, работаем с BIM
+                                </p>
+                            </div>
+                    </article>
+                    <article class="portfolio__card card">
+                        <h3 class="portfolio__card-title">Камин “Белая Королева”</h3>
+                        <div class="portfolio__card-visuals">
+                            <img 
+                            src="/images/categories/categories-3.png" 
+                            alt="Камин Белая Королева" 
+                            class="portfolio__card-main-img"
+                            >
+                            <div class="portfolio__card-thumbs">
+                                <img src="/images/categories/categories-1.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-3.png" alt="Deteil-1" class="portfolio__card-thumb is-active">
+                                <img src="/images/categories/categories-2.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-4.png" alt="Deteil-1" class="portfolio__card-thumb">
+                            </div>
+                            <div class="portfolio__card-nav">
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-prev aria-label="Назад">
+                                    <img src="/icons/trust/arrow-left.svg" alt="←">
+                                </button>
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-next aria-label="Вперёд">
+                                    <img src="/icons/trust/arrow-right.svg" alt="→">
+                                </button>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Карточка 6 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-3.png" alt="Виктор Приходько" loading="lazy">
+                        <div class="portfolio__card-actions">
+                            <button class="portfolio__card-btn">
+                                <span class="icon-favorite favorites__icon"></span>
+                                Добавить в избранное
+                            </button>
+                            <button class="portfolio__card-btn">
+                                <span class="icon-share favorites__icon"></span>
+                                Поделиться
+                            </button>
                         </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/web.svg" alt="Website">
-                                </a>
+                        <div class="portfolio__card-description">
+                                <p>Делам визуализации и рабочие чертежи в программах: ArchiCad, 3Ds Max, Revit, Palette Cad, Inventor. Предоставляем 3д модель для интеграции в проект, работаем с BIM
+                                </p>
+                            </div>
+                    </article>
+                    <article class="portfolio__card card">
+                        <h3 class="portfolio__card-title">Камин “Белая Королева”</h3>
+                        <div class="portfolio__card-visuals">
+                            <img 
+                            src="/images/categories/categories-3.png" 
+                            alt="Камин Белая Королева" 
+                            class="portfolio__card-main-img"
+                            >
+                            <div class="portfolio__card-thumbs">
+                                <img src="/images/categories/categories-1.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-3.png" alt="Deteil-1" class="portfolio__card-thumb is-active">
+                                <img src="/images/categories/categories-2.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-4.png" alt="Deteil-1" class="portfolio__card-thumb">
+                            </div>
+                            <div class="portfolio__card-nav">
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-prev aria-label="Назад">
+                                    <img src="/icons/trust/arrow-left.svg" alt="←">
+                                </button>
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-next aria-label="Вперёд">
+                                    <img src="/icons/trust/arrow-right.svg" alt="→">
+                                </button>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Карточка 7 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-2.png" alt="Виктор Приходько" loading="lazy">
+                        <div class="portfolio__card-actions">
+                            <button class="portfolio__card-btn">
+                                <span class="icon-favorite favorites__icon"></span>
+                                Добавить в избранное
+                            </button>
+                            <button class="portfolio__card-btn">
+                                <span class="icon-share favorites__icon"></span>
+                                Поделиться
+                            </button>
                         </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/web.svg" alt="Instagram">
-                                </a>
+                        <div class="portfolio__card-description">
+                                <p>Делам визуализации и рабочие чертежи в программах: ArchiCad, 3Ds Max, Revit, Palette Cad, Inventor. Предоставляем 3д модель для интеграции в проект, работаем с BIM
+                                </p>
+                            </div>
+                    </article>
+                    <article class="portfolio__card card">
+                        <h3 class="portfolio__card-title">Камин “Белая Королева”</h3>
+                        <div class="portfolio__card-visuals">
+                            <img 
+                            src="/images/categories/categories-3.png" 
+                            alt="Камин Белая Королева" 
+                            class="portfolio__card-main-img"
+                            >
+                            <div class="portfolio__card-thumbs">
+                                <img src="/images/categories/categories-1.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-3.png" alt="Deteil-1" class="portfolio__card-thumb is-active">
+                                <img src="/images/categories/categories-2.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-4.png" alt="Deteil-1" class="portfolio__card-thumb">
+                            </div>
+                            <div class="portfolio__card-nav">
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-prev aria-label="Назад">
+                                    <img src="/icons/trust/arrow-left.svg" alt="←">
+                                </button>
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-next aria-label="Вперёд">
+                                    <img src="/icons/trust/arrow-right.svg" alt="→">
+                                </button>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Карточка 8 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-4.png" alt="Виктор Приходько" loading="lazy">
+                        <div class="portfolio__card-actions">
+                            <button class="portfolio__card-btn">
+                                <span class="icon-favorite favorites__icon"></span>
+                                Добавить в избранное
+                            </button>
+                            <button class="portfolio__card-btn">
+                                <span class="icon-share favorites__icon"></span>
+                                Поделиться
+                            </button>
                         </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
+                        <div class="portfolio__card-description">
+                                <p>Делам визуализации и рабочие чертежи в программах: ArchiCad, 3Ds Max, Revit, Palette Cad, Inventor. Предоставляем 3д модель для интеграции в проект, работаем с BIM
+                                </p>
+                            </div>
+                    </article>
+                    <article class="portfolio__card card">
+                        <h3 class="portfolio__card-title">Камин “Белая Королева”</h3>
+                        <div class="portfolio__card-visuals">
+                            <img 
+                            src="/images/categories/categories-3.png" 
+                            alt="Камин Белая Королева" 
+                            class="portfolio__card-main-img"
+                            >
+                            <div class="portfolio__card-thumbs">
+                                <img src="/images/categories/categories-1.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-3.png" alt="Deteil-1" class="portfolio__card-thumb is-active">
+                                <img src="/images/categories/categories-2.png" alt="Deteil-1" class="portfolio__card-thumb">
+                                <img src="/images/categories/categories-4.png" alt="Deteil-1" class="portfolio__card-thumb">
+                            </div>
+                            <div class="portfolio__card-nav">
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-prev aria-label="Назад">
+                                    <img src="/icons/trust/arrow-left.svg" alt="←">
+                                </button>
+                                <button class="portfolio__card-nav-btn" type="button" data-js-portfolio-next aria-label="Вперёд">
+                                    <img src="/icons/trust/arrow-right.svg" alt="→">
+                                </button>
                             </div>
                         </div>
-                    </article>
-
-                    <!-- Карточка 9 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-2.png" alt="Виктор Приходько" loading="lazy">
+                        <div class="portfolio__card-actions">
+                            <button class="portfolio__card-btn">
+                                <span class="icon-favorite favorites__icon"></span>
+                                Добавить в избранное
+                            </button>
+                            <button class="portfolio__card-btn">
+                                <span class="icon-share favorites__icon"></span>
+                                Поделиться
+                            </button>
                         </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/web.svg" alt="Website">
-                                </a>
+                        <div class="portfolio__card-description">
+                                <p>Делам визуализации и рабочие чертежи в программах: ArchiCad, 3Ds Max, Revit, Palette Cad, Inventor. Предоставляем 3д модель для интеграции в проект, работаем с BIM
+                                </p>
                             </div>
-                        </div>
                     </article>
-
-                    <!-- Карточка 10 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-3.png" alt="Виктор Приходько" loading="lazy">
-                        </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 11 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-4.png" alt="Виктор Приходько" loading="lazy">
-                        </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/web.svg" alt="Instagram">
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Карточка 12 -->
-                    <article class="trust__item" data-js-trust-item>
-                        <div class="trust__image">
-                            <img src="/images/trust/person-1.png" alt="Виктор Приходько" loading="lazy">
-                        </div>
-                        <div class="trust__footer">
-                            <h3 class="trust__name">Виктор Приходько</h3>
-                            <div class="trust__socials">
-                                <a href="#" class="trust__social-link">
-                                    <img src="/icons/trust/inst.svg" alt="Instagram">
-                                </a>
-                            </div>
-                        </div>
-                    </article>
+                    
                 </div>
             </div>
         </section>
@@ -696,40 +662,6 @@
         </div>
     </footer>
 
-    <div class="modal" data-js-modal="founder">
-        <div class="modal__overlay"></div>
-        <div class="modal__content">
-            <button class="modal__close" data-js-modal-close aria-label="Закрыть">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-            </button>
-            
-            <div class="modal__header">
-                <h3 class="modal__title">Получить консультацию руководителя</h3>
-                <p class="modal__subtitle">
-                    Оставьте ваши контакты, и руководитель бюро свяжется с вами для детального обсуждения и помощи с вашим проектом
-                </p>
-            </div>
-            
-            <div class="modal__body">
-                <form class="modal__form" action="#" method="POST">
-                    <input class="modal__input" type="text" placeholder="Ваше имя" required>
-                    <input class="modal__input" type="tel" placeholder="Ваш телефон" required>
-                    
-                    <label class="modal__checkbox-label">
-                        <input type="checkbox" required checked>
-                        <span>
-                            Нажимая на кнопку я соглашаюсь с <a href="#">политикой конфиденциальности</a>
-                        </span>
-                    </label>
-                    
-                    <button class="button modal__btn" type="submit">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <div class="modal" data-js-modal="showroom">
         <div class="modal__overlay"></div>
         <div class="modal__content">
@@ -760,113 +692,5 @@
             </div>
         </div>
     </div>
-
-    <div class="modal" data-js-modal="realization">
-        <div class="modal__overlay"></div>
-        <div class="modal__content">
-            <button class="modal__close" data-js-modal-close aria-label="Закрыть">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-            </button>
-            
-            <div class="modal__header">
-                <h3 class="modal__title">Получить предварительную оценку проекта</h3>
-                <p class="modal__subtitle">
-                    Отправьте ваш проект, и специалисты бюро сделают его предварительную оценку и предложат способы реализации.
-                </p>
-            </div>
-            
-            <div class="modal__body">
-                <form class="modal__form" action="#" method="POST" enctype="multipart/form-data">
-                    <div class="modal__form-grid">
-                        <div class="modal__upload-area">
-                            <input type="file" name="project_file" id="project_file" hidden>
-                            <label for="project_file" style="display: flex; flex-direction: column; align-items: center; gap: 10px; color: #6F6F6F; cursor: pointer;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="21" viewBox="0 0 27 21" fill="none">
-                                    <path d="M16.9667 16.5H21.0833C24.0625 16.5 26.5 14.9626 26.5 12.1C26.5 9.23737 23.6292 7.8121 21.3 7.7C20.8185 3.22316 17.4542 0.5 13.5 0.5C9.7625 0.5 7.35533 2.91 6.56667 5.3C3.31667 5.6 0.5 7.60947 0.5 10.9C0.5 14.1905 3.425 16.5 7 16.5H10.0333" stroke="#939393" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M13.5 20.5V8.31117M16.5 10.7447L13.5 7.5L10.5 10.7447H16.5Z" stroke="#939393" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span style="font-size: 13px;">Прикрепить файлы</span>
-                            </label>
-                        </div>
-                        <textarea class="modal__input modal__textarea" name="comment" placeholder="Комментарий"></textarea>
-                        <input class="modal__input" type="text" name="name" placeholder="Ваше имя" required>
-                        <input class="modal__input" type="tel" name="phone" placeholder="Ваш телефон" required>
-                        <input class="modal__input" type="email" name="email" placeholder="Ваша почта">
-                    </div>
-
-                    <label class="modal__checkbox-label">
-                        <input type="checkbox" required checked>
-                        <span>Нажимая на кнопку я соглашаюсь с <a href="#">политикой конфиденциальности</a></span>
-                    </label>
-
-                    <button class="modal__btn" type="submit">Отправить</button>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" data-js-modal="profile-modal">
-        <div class="modal__overlay"></div>
-        <div class="modal__content">
-            <button class="modal__close" type="button" data-js-modal-close aria-label="Закрыть">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 6L6 18M6 6l12 12"/>
-                </svg>
-            </button>
-            
-            <div class="modal__header">
-                <h2 class="modal__title">Редактировать профиль</h2>
-                <p class="modal__subtitle">Измените данные вашего аккаунта</p>
-            </div>
-
-            <div class="modal__body">
-                <form class="modal__form" id="profile-edit-form">
-                    <div class="modal__form-grid">
-                        <!-- Имя -->
-                        <div class="auth-field">
-                            <label class="auth-field__label" for="edit-name">Имя</label>
-                            <input class="auth-field__input" type="text" id="edit-name" name="name" required>
-                            <span class="auth-field__error" id="edit-name-error"></span>
-                        </div>
-
-                        <!-- Email (только чтение или с проверкой уникальности) -->
-                        <div class="auth-field">
-                            <label class="auth-field__label" for="edit-email">Email</label>
-                            <input class="auth-field__input" type="email" id="edit-email" name="email" required>
-                            <span class="auth-field__error" id="edit-email-error"></span>
-                        </div>
-
-                        <!-- Телефон -->
-                        <div class="auth-field">
-                            <label class="auth-field__label" for="edit-phone">Телефон</label>
-                            <input class="auth-field__input" type="tel" id="edit-phone" name="phone">
-                            <span class="auth-field__error" id="edit-phone-error"></span>
-                        </div>
-
-                        <!-- Новый пароль -->
-                        <div class="auth-field">
-                            <label class="auth-field__label" for="edit-password">Новый пароль</label>
-                            <input class="auth-field__input" type="password" id="edit-password" name="password" placeholder="Оставьте пустым, если не меняете">
-                            <span class="auth-field__error" id="edit-password-error"></span>
-                        </div>
-
-                        <!-- Подтверждение пароля -->
-                        <div class="auth-field">
-                            <label class="auth-field__label" for="edit-password-confirm">Подтвердите пароль</label>
-                            <input class="auth-field__input" type="password" id="edit-password-confirm" name="passwordConfirm">
-                            <span class="auth-field__error" id="edit-password-confirm-error"></span>
-                        </div>
-                    </div>
-
-                    <button class="modal__btn button" type="submit">Сохранить изменения</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="toast-container" class="toast-container"></div>
 </body>
 </html>
