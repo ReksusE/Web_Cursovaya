@@ -31,7 +31,7 @@ import LangManager from "./LangManager.js";
     new Header();
     new Hero();
     new TrustSlider();
-    new Product();
+    new Product(favoritesManager);
     new FounderSlider();
     new Timeline();
     new Portfolio();

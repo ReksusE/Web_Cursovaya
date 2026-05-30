@@ -88,7 +88,9 @@ class Concepts {
           </svg>
         </button>
         <div class="card-overlay">
-          <h3 class="card-title">${card.title}</h3>
+          <a href="Project.html?id=${card.id}" class="card-title-link">
+            <h3 class="card-title">${card.title}</h3>
+          </a>
           <ul class="card-list">${featuresHTML}</ul>
         </div>
       </article>

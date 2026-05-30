@@ -155,7 +155,7 @@ class Auth {
             if (user) {
             localStorage.setItem('artkante-current-user', JSON.stringify(user))
             this.showToast(`Добро пожаловать, ${user.name}!`, false)
-            setTimeout(() => window.location.href = '/Home.html', 1500)
+            setTimeout(() => window.location.href = '/pages/Home.html', 1500)
             } else {
             this.showError('login-email-error', 'Неверный email или пароль')
             this.setFieldState(email, false)
@@ -259,7 +259,7 @@ class Auth {
             const created = await res.json()
             localStorage.setItem('artkante-current-user', JSON.stringify(created))
             this.showToast(`Аккаунт создан! Добро пожаловать, ${created.name}`, false)
-            setTimeout(() => window.location.href = '/Home.html', 1500)
+            setTimeout(() => window.location.href = '/pages/Home.html', 1500)
         } catch (err) {
             this.showToast('Ошибка при регистрации. Попробуйте позже.', true)
             console.error(err)

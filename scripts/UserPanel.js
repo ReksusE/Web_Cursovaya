@@ -36,7 +36,7 @@ class UserPanel {
             const user = JSON.parse(localStorage.getItem('artkante-current-user') || 'null');
             if (!user) {
                 // Если somehow кнопка редактирования доступна гостю, редиректим на вход
-                window.location.href = '/Authorization.html';
+                window.location.href = '/pages/Authorization.html';
                 return;
             }
             this.modalManager?.open('profile-modal');
@@ -85,7 +85,7 @@ class UserPanel {
                 // Для этого нужно немного изменить HTML (см. шаг 2).
             } else {
                 authActionBtn.textContent = 'Войти';
-                authActionBtn.setAttribute('href', '/Authorization.html');
+                authActionBtn.setAttribute('href', '/pages/Authorization.html');
                 authActionBtn.style.color = ''; // Сброс цвета
             }
         }
@@ -107,7 +107,7 @@ class UserPanel {
         localStorage.removeItem('artkante-current-user');
         this.updateUserInfo();
         this.close();
-        window.location.href = '/Authorization.html';
+        window.location.href = '/pages/Authorization.html';
     }
 }
 export default UserPanel;
