@@ -19,7 +19,7 @@ class Favorites {
     async toggle(conceptId, btn) {
         if (!this.currentUser) {
         alert('Для добавления в избранное необходимо авторизоваться');
-        window.location.href = '/Authorization.html';
+        window.location.href = '/Pages/Authorization.html';
         return;
         }
 

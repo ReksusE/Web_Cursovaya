@@ -1,10 +1,10 @@
 const translations = {
     ru: {
         // Header & Nav
-        'nav-philosophy': 'Философия',
-        'nav-design': 'Проектирование',
+        'nav-home': 'Главная',
+        'nav-concepts': 'Концепты',
         'nav-portfolio': 'Портфолио',
-        'nav-inspiration': 'Вдохновение',
+        'nav-philosophy': 'Философия',
         'nav-contacts': 'Контакты',
         'nav-favorites': 'Избранное',
         
@@ -96,10 +96,10 @@ const translations = {
     },
     en: {
         // Header & Nav
-        'nav-philosophy': 'Philosophy',
-        'nav-design': 'Design',
+        'nav-home': 'Home',
+        'nav-concepts': 'Concepts',
         'nav-portfolio': 'Portfolio',
-        'nav-inspiration': 'Inspiration',
+        'nav-philosophy': 'Philosophy',
         'nav-contacts': 'Contacts',
         'nav-favorites': 'Favorites',
         
