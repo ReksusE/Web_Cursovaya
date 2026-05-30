@@ -92,6 +92,10 @@
                     color: var(--color-light);
                 }
                 
+                &.is-active {
+                    color: var(--color-light);
+                    pointer-events: none;
+                }
             }
 
             &-bold {
@@ -298,7 +302,6 @@
     width: 24px;
     height: 24px;
 }
-
 
 html:not(.light-theme) .icon-moon { 
     display: block; 

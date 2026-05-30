@@ -236,11 +236,6 @@ html.light-theme {
         box-shadow: 0 1px 0 var(--color-border), var(--shadow-card);
     }
 
-    // Навигация
-    .header__menu-link-accent {
-        color: var(--color-accent-05);
-        &:hover { color: var(--color-light); }
-    }
 
     // Hero — тёмный оверлей чуть светлее
     .hero__bg::after {

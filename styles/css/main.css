@@ -491,6 +491,10 @@ h2,
 .header__menu-link-accent:hover {
   color: var(--color-light);
 }
+.header__menu-link-accent.is-active {
+  color: var(--color-light);
+  pointer-events: none;
+}
 .header__menu-link-bold {
   font-weight: 400;
   font-size: clamp(0.75rem, 0.6666666667rem + 0.2777777778vw, 1rem);
@@ -3726,12 +3730,6 @@ html.light-theme .header__theme-toggle .icon-sun {
 html.light-theme .header {
   background-color: var(--color-surface-1);
   box-shadow: 0 1px 0 var(--color-border), var(--shadow-card);
-}
-html.light-theme .header__menu-link-accent {
-  color: var(--color-accent-05);
-}
-html.light-theme .header__menu-link-accent:hover {
-  color: var(--color-light);
 }
 html.light-theme .hero__bg::after {
   background: rgba(240, 233, 220, 0.45);
