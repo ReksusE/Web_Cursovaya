@@ -339,15 +339,6 @@
       "phone": "+7 (999) 123-45-67",
       "favorites": [],
       "createdAt": "2024-01-01T00:00:00.000Z"
-    },
-    {
-      "name": "я",
-      "email": "admin@artkante.ru",
-      "password": "Admin123!",
-      "role": "client",
-      "favorites": [],
-      "createdAt": "2026-05-31T10:03:06.720Z",
-      "id": "-qYYGjtdTPM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

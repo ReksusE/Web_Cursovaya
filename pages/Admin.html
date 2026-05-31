@@ -33,6 +33,38 @@
     </div>
 
     <div id="toast-container" class="toast-container"></div>
+
+    <!-- Модалка: Концепты -->
+    <div class="modal" data-js-modal="admin-concept-modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" data-js-modal-close>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal__header">
+                <h2 class="modal__title" id="concept-modal-title">Добавить концепт</h2>
+            </div>
+            <div class="modal__body">
+                <form id="admin-concept-form" class="modal__form"></form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалка: Пользователи -->
+    <div class="modal" data-js-modal="admin-user-modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" data-js-modal-close>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal__header">
+                h2 class="modal__title" id="user-modal-title">Добавить пользователя</h2>
+            </div>
+            <div class="modal__body">
+                <form id="admin-user-form" class="modal__form"></form>
+            </div>
+        </div>
+    </div>
     <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>

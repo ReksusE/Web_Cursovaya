@@ -1,25 +1,29 @@
 class AdminConcepts {
     selectors = {
+        table: '.admin-concepts__table',
         addBtn: '[data-js-admin-add]',
         editBtn: '[data-js-admin-edit]',
         deleteBtn: '[data-js-admin-delete]',
-        cancelBtn: '[data-js-admin-cancel]',
-        form: '[data-js-admin-form]',
+        form: '#admin-concept-form',
+        modalTitle: '#concept-modal-title',
     }
     API_URL = 'http://localhost:3000'
 
-    constructor(container, toastManager) {
+    constructor(container, toastManager, modalManager) {
         this.container = container
         this.toastManager = toastManager
+        this.modalManager = modalManager
         this.data = []
-        this.isEditing = false
         this.editId = null
+
         this.init()
     }
 
     async init() {
         await this.fetch()
         this.render()
+        this.bindEvents()
+        this.bindModalEvents()
     }
 
     async fetch() {
@@ -33,7 +37,6 @@ class AdminConcepts {
     }
 
     render() {
-        if (this.isEditing) return this.renderForm()
         if (!this.data.length) {
         this.container.innerHTML = `<p class="admin__empty">Концептов не найдено. <button class="admin__btn" data-js-admin-add>+ Добавить</button></p>`
         return this.bindEvents()
@@ -60,70 +63,82 @@ class AdminConcepts {
         this.bindEvents()
     }
 
-    renderForm(concept = {}) {
-        this.container.innerHTML = `
-        <form class="admin__form" data-js-admin-form>
-            <div class="admin__form-group"><label>Название</label><input type="text" class="admin__input" name="title" value="${concept.title || ''}" required></div>
-            <div class="admin__form-group"><label>Категория</label>
+    openModal(mode, concept = null) {
+        this.editId = concept ? concept.id : null
+        const form = document.querySelector(this.selectors.form)
+        if (!form) return
+
+        const titleEl = document.querySelector(this.selectors.modalTitle)
+        if (titleEl) titleEl.textContent = mode === 'edit' ? `Редактировать: ${concept.title}` : 'Добавить концепт'
+
+        form.innerHTML = `
+        <div class="admin__form-group"><label>Название</label><input type="text" class="admin__input" name="title" value="${concept?.title || ''}" required></div>
+        <div class="admin__form-group"><label>Категория</label>
             <select class="admin__select" name="category">
-                <option value="Загородный дом" ${concept.category === 'Загородный дом' ? 'selected' : ''}>Загородный дом</option>
-                <option value="Городская квартира" ${concept.category === 'Городская квартира' ? 'selected' : ''}>Городская квартира</option>
-                <option value="Общественные пространства" ${concept.category === 'Общественные пространства' ? 'selected' : ''}>Общественные пространства</option>
+            <option value="Загородный дом" ${concept?.category === 'Загородный дом' ? 'selected' : ''}>Загородный дом</option>
+            <option value="Городская квартира" ${concept?.category === 'Городская квартира' ? 'selected' : ''}>Городская квартира</option>
+            <option value="Общественные пространства" ${concept?.category === 'Общественные пространства' ? 'selected' : ''}>Общественные пространства</option>
             </select>
-            </div>
-            <div class="admin__form-group"><label>Топливо</label><input type="text" class="admin__input" name="fuel" value="${concept.fuel || ''}"></div>
-            <div class="admin__form-group"><label>URL изображения</label><input type="text" class="admin__input" name="image" value="${concept.image || '/images/product/maxon-1.jpg'}" required></div>
-            <div class="admin__form-group admin__form-full"><label>Описание</label><input type="text" class="admin__input" name="description" value="${concept.description || ''}"></div>
-            <div class="admin__form-actions">
-            <button type="button" class="admin__btn-sm admin__btn-sm--cancel" data-js-admin-cancel>Отмена</button>
+        </div>
+        <div class="admin__form-group"><label>Топливо</label><input type="text" class="admin__input" name="fuel" value="${concept?.fuel || ''}"></div>
+        <div class="admin__form-group"><label>URL изображения</label><input type="text" class="admin__input" name="image" value="${concept?.image || '/images/product/maxon-1.jpg'}" required></div>
+        <div class="admin__form-group admin__form-full"><label>Описание</label><input type="text" class="admin__input" name="description" value="${concept?.description || ''}"></div>
+        <div class="admin__form-actions">
             <button type="submit" class="admin__btn-sm admin__btn-sm--save">${this.editId ? 'Сохранить' : 'Создать'}</button>
-            </div>
-        </form>
+        </div>
         `
-        this.bindFormEvents()
+
+        this.modalManager.open('admin-concept-modal')
     }
 
     bindEvents() {
-        this.container.querySelector(this.selectors.addBtn)?.addEventListener('click', () => { this.isEditing = true; this.editId = null; this.renderForm() })
-        this.container.querySelectorAll(this.selectors.editBtn).forEach(btn => btn.addEventListener('click', () => { this.isEditing = true; this.editId = btn.dataset.id; this.renderForm(this.data.find(c => c.id == this.editId)) }))
+        this.container.querySelector(this.selectors.addBtn)?.addEventListener('click', () => this.openModal('add'))
+        this.container.querySelectorAll(this.selectors.editBtn).forEach(btn => btn.addEventListener('click', () => this.openModal('edit', this.data.find(c => c.id == btn.dataset.id))))
         this.container.querySelectorAll(this.selectors.deleteBtn).forEach(btn => btn.addEventListener('click', () => this.deleteItem(btn.dataset.id)))
     }
 
-    bindFormEvents() {
-        this.container.querySelector(this.selectors.form)?.addEventListener('submit', async (e) => {
+    bindModalEvents() {
+        const form = document.querySelector(this.selectors.form)
+        if (!form) return
+
+        form.addEventListener('submit', async (e) => {
         e.preventDefault()
         const formData = Object.fromEntries(new FormData(e.target))
-        await (this.editId ? this.updateItem(this.editId, formData) : this.createItem(formData))
+        const btn = form.querySelector('button[type="submit"]')
+        btn.disabled = true; btn.textContent = 'Сохранение...'
+
+        try {
+            if (this.editId) await this.updateItem(this.editId, formData)
+            else await this.createItem(formData)
+            this.modalManager.close()
+        } catch {
+            this.toastManager.show('Ошибка сохранения', 'error')
+        } finally {
+            btn.disabled = false; btn.textContent = this.editId ? 'Сохранить' : 'Создать'
+        }
         })
-        this.container.querySelector(this.selectors.cancelBtn)?.addEventListener('click', () => { this.isEditing = false; this.editId = null; this.render() })
     }
 
     async createItem(data) {
-        try {
         const res = await fetch(`${this.API_URL}/concepts`, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({...data, features: [], specs: {}}) })
         if (!res.ok) throw new Error()
         this.toastManager.show('Концепт успешно добавлен', 'success')
-        this.isEditing = false; this.editId = null; await this.init()
-        } catch { this.toastManager.show('Ошибка создания концепта', 'error') }
+        await this.init()
     }
 
     async updateItem(id, data) {
-        try {
         const res = await fetch(`${this.API_URL}/concepts/${id}`, { method: 'PATCH', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) })
         if (!res.ok) throw new Error()
         this.toastManager.show('Концепт обновлен', 'success')
-        this.isEditing = false; this.editId = null; await this.init()
-        } catch { this.toastManager.show('Ошибка обновления', 'error') }
+        await this.init()
     }
 
     async deleteItem(id) {
         if (!confirm('Удалить концепт? Это действие нельзя отменить.')) return
-        try {
         const res = await fetch(`${this.API_URL}/concepts/${id}`, { method: 'DELETE' })
         if (!res.ok) throw new Error()
         this.toastManager.show('Концепт удален', 'info')
         await this.init()
-        } catch { this.toastManager.show('Ошибка удаления', 'error') }
     }
 }
 export default AdminConcepts

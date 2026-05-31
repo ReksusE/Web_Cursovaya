@@ -9,9 +9,10 @@ class AdminPanel {
     stateClasses = { isActive: 'is-active' }
     tabTitles = { dashboard: 'Дашборд', concepts: 'Управление концептами', users: 'Управление пользователями' }
 
-    constructor(toastManager) {
+    constructor(toastManager, modalManager) {
         this.toastManager = toastManager
-        this.rootElement = document.querySelector(this.selectors.root)
+        this.modalManager = modalManager
+        this.rootElement = document.querySelector('[data-js-admin]')
         if (!this.rootElement) return
 
         this.user = JSON.parse(localStorage.getItem('artkante-current-user') || 'null')
@@ -50,21 +51,20 @@ class AdminPanel {
     }
 
     renderTab(tab) {
-        const contentEl = this.rootElement.querySelector(this.selectors.content)
-        const titleEl = this.rootElement.querySelector(this.selectors.title)
+        const contentEl = this.rootElement.querySelector('[data-js-admin-content]')
+        const titleEl = this.rootElement.querySelector('[data-js-admin-title]')
         if (!contentEl) return
 
         contentEl.innerHTML = '<p class="admin__loading">Загрузка модуля...</p>'
         if (titleEl) titleEl.textContent = this.tabTitles[tab] || tab
-
         this.activeModule = null
 
         switch (tab) {
         case 'concepts':
-            import('./AdminConcept.js').then(m => { this.activeModule = new m.default(contentEl, this.toastManager) })
+            import('./AdminConcept.js').then(m => { this.activeModule = new m.default(contentEl, this.toastManager, this.modalManager) })
             break
         case 'users':
-            import('./AdminUser.js').then(m => { this.activeModule = new m.default(contentEl, this.toastManager) })
+            import('./AdminUser.js').then(m => { this.activeModule = new m.default(contentEl, this.toastManager, this.modalManager) })
             break
         case 'dashboard':
             contentEl.innerHTML = '<p class="admin__empty">Статистика и графики будут добавлены позже.</p>'

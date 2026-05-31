@@ -37,7 +37,7 @@ import AdminPanel from "./Admin.js";
     new FounderSlider();
     new Timeline();
     new Portfolio();
-    new AdminPanel(toastManager);
+    new AdminPanel(toastManager, modalManager);
 
     if (document.querySelector('[data-js-favorites-grid]')) {
         favoritesManager.renderPage();

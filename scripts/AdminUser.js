@@ -1,19 +1,20 @@
 class AdminUsers {
     selectors = {
+        table: '.admin-users__table',
         addBtn: '[data-js-admin-add]',
         editBtn: '[data-js-admin-edit]',
         deleteBtn: '[data-js-admin-delete]',
-        cancelBtn: '[data-js-admin-cancel]',
-        form: '[data-js-admin-form]',
+        form: '#admin-user-form',
+        modalTitle: '#user-modal-title',
     }
     API_URL = 'http://localhost:3000'
     currentUser = JSON.parse(localStorage.getItem('artkante-current-user') || 'null')
 
-    constructor(container, toastManager) {
+    constructor(container, toastManager, modalManager) {
         this.container = container
         this.toastManager = toastManager
+        this.modalManager = modalManager
         this.data = []
-        this.isEditing = false
         this.editId = null
         this.init()
     }
@@ -21,6 +22,8 @@ class AdminUsers {
     async init() {
         await this.fetch()
         this.render()
+        this.bindEvents()
+        this.bindModalEvents()
     }
 
     async fetch() {
@@ -34,7 +37,6 @@ class AdminUsers {
     }
 
     render() {
-        if (this.isEditing) return this.renderForm()
         this.container.innerHTML = `
         <table class="admin__table admin-users__table">
             <thead><tr><th>ID</th><th>Имя</th><th>Email</th><th>Роль</th><th>Действия</th></tr></thead>
@@ -56,76 +58,88 @@ class AdminUsers {
         this.bindEvents()
     }
 
-    renderForm(user = {}) {
-        this.container.innerHTML = `
-        <form class="admin__form" data-js-admin-form>
-            <div class="admin__form-group"><label>Имя</label><input type="text" class="admin__input" name="name" value="${user.name || ''}" required></div>
-            <div class="admin__form-group"><label>Email</label><input type="email" class="admin__input" name="email" value="${user.email || ''}" required></div>
-            <div class="admin__form-group"><label>Пароль (при создании)</label><input type="password" class="admin__input" name="password" ${this.editId ? '' : 'required'}></div>
-            <div class="admin__form-group"><label>Роль</label>
+    openModal(mode, user = null) {
+        this.editId = user ? user.id : null
+        const form = document.querySelector(this.selectors.form)
+        if (!form) return
+
+        const titleEl = document.querySelector(this.selectors.modalTitle)
+        if (titleEl) titleEl.textContent = mode === 'edit' ? `Редактировать: ${user.name}` : 'Добавить пользователя'
+
+        form.innerHTML = `
+        <div class="admin__form-group"><label>Имя</label><input type="text" class="admin__input" name="name" value="${user?.name || ''}" required></div>
+        <div class="admin__form-group"><label>Email</label><input type="email" class="admin__input" name="email" value="${user?.email || ''}" required></div>
+        <div class="admin__form-group"><label>Пароль ${this.editId ? '(оставьте пустым, чтобы не менять)' : ''}</label><input type="password" class="admin__input" name="password" ${this.editId ? '' : 'required'}></div>
+        <div class="admin__form-group"><label>Роль</label>
             <select class="admin__select" name="role">
-                <option value="client" ${user.role === 'client' ? 'selected' : ''}>Клиент</option>
-                <option value="designer" ${user.role === 'designer' ? 'selected' : ''}>Дизайнер</option>
-                <option value="admin" ${user.role === 'admin' ? 'selected' : ''}>Админ</option>
+            <option value="client" ${user?.role === 'client' ? 'selected' : ''}>Клиент</option>
+            <option value="designer" ${user?.role === 'designer' ? 'selected' : ''}>Дизайнер</option>
+            <option value="admin" ${user?.role === 'admin' ? 'selected' : ''}>Админ</option>
             </select>
-            </div>
-            <div class="admin__form-actions">
-            <button type="button" class="admin__btn-sm admin__btn-sm--cancel" data-js-admin-cancel>Отмена</button>
+        </div>
+        <div class="admin__form-actions">
             <button type="submit" class="admin__btn-sm admin__btn-sm--save">${this.editId ? 'Сохранить' : 'Создать'}</button>
-            </div>
-        </form>
+        </div>
         `
-        this.bindFormEvents()
+
+        this.modalManager.open('admin-user-modal')
     }
 
     bindEvents() {
-        this.container.querySelector(this.selectors.addBtn)?.addEventListener('click', () => { this.isEditing = true; this.editId = null; this.renderForm() })
-        this.container.querySelectorAll(this.selectors.editBtn).forEach(btn => btn.addEventListener('click', () => { this.isEditing = true; this.editId = btn.dataset.id; this.renderForm(this.data.find(u => u.id == this.editId)) }))
+        this.container.querySelector(this.selectors.addBtn)?.addEventListener('click', () => this.openModal('add'))
+        this.container.querySelectorAll(this.selectors.editBtn).forEach(btn => btn.addEventListener('click', () => this.openModal('edit', this.data.find(u => u.id == btn.dataset.id))))
         this.container.querySelectorAll(this.selectors.deleteBtn).forEach(btn => btn.addEventListener('click', () => this.deleteItem(btn.dataset.id)))
     }
 
-    bindFormEvents() {
-        this.container.querySelector(this.selectors.form)?.addEventListener('submit', async (e) => {
+    bindModalEvents() {
+        const form = document.querySelector(this.selectors.form)
+        if (!form) return
+
+        form.addEventListener('submit', async (e) => {
         e.preventDefault()
         const formData = Object.fromEntries(new FormData(e.target))
-        if (!this.editId) delete formData.passwordConfirm
-        await (this.editId ? this.updateItem(this.editId, formData) : this.createItem(formData))
+        if (this.editId && !formData.password) delete formData.password
+
+        const btn = form.querySelector('button[type="submit"]')
+        btn.disabled = true; btn.textContent = 'Сохранение...'
+
+        try {
+            if (this.editId) await this.updateItem(this.editId, formData)
+            else await this.createItem(formData)
+            this.modalManager.close()
+        } catch {
+            this.toastManager.show('Ошибка сохранения', 'error')
+        } finally {
+            btn.disabled = false; btn.textContent = this.editId ? 'Сохранить' : 'Создать'
+        }
         })
-        this.container.querySelector(this.selectors.cancelBtn)?.addEventListener('click', () => { this.isEditing = false; this.editId = null; this.render() })
     }
 
     async createItem(data) {
-        try {
         const res = await fetch(`${this.API_URL}/users`, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({...data, favorites: [], createdAt: new Date().toISOString()}) })
         if (!res.ok) throw new Error()
         this.toastManager.show('Пользователь создан', 'success')
-        this.isEditing = false; this.editId = null; await this.init()
-        } catch { this.toastManager.show('Ошибка создания пользователя', 'error') }
+        await this.init()
     }
 
     async updateItem(id, data) {
-        try {
-        if (data.password === '') delete data.password
         const res = await fetch(`${this.API_URL}/users/${id}`, { method: 'PATCH', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) })
         if (!res.ok) throw new Error()
         this.toastManager.show('Пользователь обновлен', 'success')
-        this.isEditing = false; this.editId = null; await this.init()
-        } catch { this.toastManager.show('Ошибка обновления', 'error') }
+        await this.init()
     }
 
     async deleteItem(id) {
         if (id == this.currentUser.id) return this.toastManager.show('Нельзя удалить самого себя', 'error')
         const adminsCount = this.data.filter(u => u.role === 'admin').length
-        const targetUser = this.data.find(u => u.id == id)
-        if (targetUser?.role === 'admin' && adminsCount <= 1) return this.toastManager.show('Нельзя удалить последнего админа', 'error')
+        const target = this.data.find(u => u.id == id)
+        if (target?.role === 'admin' && adminsCount <= 1) return this.toastManager.show('Нельзя удалить последнего админа', 'error')
         if (!confirm('Удалить пользователя?')) return
-        
-        try {
+
         const res = await fetch(`${this.API_URL}/users/${id}`, { method: 'DELETE' })
         if (!res.ok) throw new Error()
         this.toastManager.show('Пользователь удален', 'info')
         await this.init()
-        } catch { this.toastManager.show('Ошибка удаления', 'error') }
     }
 }
 export default AdminUsers
