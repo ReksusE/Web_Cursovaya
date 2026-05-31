@@ -14,6 +14,8 @@ import ProfileEdit from "./ProfileEdit.js";
 import Toast from "./Toast.js";
 import ThemeManager from "./ThemeManager.js";
 import LangManager from "./LangManager.js";
+import AdminPanel from "./Admin.js";
+
 
 (async () => {
     const toastManager = new Toast();
@@ -28,13 +30,14 @@ import LangManager from "./LangManager.js";
     const auth = new Auth(toastManager); // <-- Передача (нужно обновить Auth.js)
     
     new Concepts(favoritesManager);
-    new Header();
+    // new Header();
     new Hero();
     new TrustSlider();
     new Product(favoritesManager);
     new FounderSlider();
     new Timeline();
     new Portfolio();
+    new AdminPanel(toastManager, modalManager);
 
     if (document.querySelector('[data-js-favorites-grid]')) {
         favoritesManager.renderPage();
