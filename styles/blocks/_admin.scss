@@ -148,4 +148,140 @@
         padding: rem(40);
         color: var(--color-gray);
     }
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(16);
+        background: var(--color-surface-2);
+        padding: rem(24);
+        border-radius: rem(8);
+        margin-bottom: rem(20);
+        animation: formIn 0.3s ease both;
+
+        @keyframes formIn { 
+            from { 
+                opacity: 0; 
+                transform: translateY(10px); 
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            } 
+        }
+
+        &-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: rem(8); 
+
+            label { 
+                font-size: rem(12); 
+                color: var(--color-gray); 
+                text-transform: uppercase; 
+            } 
+        }
+
+        &-full { 
+            grid-column: 1 / -1; 
+        }
+
+        &-actions { 
+            grid-column: 1 / -1; 
+            display: flex; 
+            gap: rem(12); 
+            justify-content: flex-end; 
+        }
+    }
+
+    &__input, &__select {
+        width: 100%;
+        padding: rem(10) rem(14);
+        background: var(--color-surface-3);
+        border: 1px solid var(--color-border);
+        color: var(--color-light);
+        border-radius: rem(4);
+        font-size: rem(14);
+        transition: border-color var(--transition-duration);
+
+        &:focus { 
+            outline: none; 
+            border-color: var(--color-accent-05); 
+        }
+    }
+
+    &__badge {
+        display: inline-block;
+        padding: rem(4) rem(8);
+        border-radius: rem(4);
+        font-size: rem(11);
+        font-weight: 500;
+        text-transform: uppercase;
+
+        &--admin { 
+            background: rgba(164,6,6,0.2); 
+            color: var(--color-red); 
+        }
+
+        &--client { 
+            background: rgba(240,124,0,0.2); 
+            color: var(--color-accent-05); 
+        }
+
+        &--designer { 
+            background: rgba(59,130,246,0.2); 
+            color: #3b82f6; 
+        }
+    }
+
+    &__actions { 
+        display: flex; 
+        gap: rem(8); 
+    }
+
+    &__btn-sm {
+        padding: rem(6) rem(10);
+        font-size: rem(12);
+        border: none;
+        border-radius: rem(4);
+        cursor: pointer;
+        transition: all var(--transition-duration);
+
+        &--edit { 
+            background: var(--color-surface-3); 
+            color: var(--color-light);
+            
+            @include hover { 
+                background: var(--color-gray); 
+            } 
+        }
+
+        &--delete { 
+            background: rgba(164,6,6,0.2); 
+            color: var(--color-red); 
+
+            @include hover { 
+                background: var(--color-red); 
+                color: var(--color-light); 
+            } 
+        }
+
+        &--save { 
+            background: var(--color-accent-05); 
+            color: var(--color-light); 
+
+            @include hover { 
+                background: var(--color-accent-alt); 
+            } 
+        }
+
+        &--cancel { 
+            background: var(--color-surface-3); 
+            color: var(--color-gray); 
+            
+            @include hover { 
+                color: var(--color-light); 
+            } 
+        }
+    }
 }

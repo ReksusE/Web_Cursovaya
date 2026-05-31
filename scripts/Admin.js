@@ -57,21 +57,17 @@ class AdminPanel {
         contentEl.innerHTML = '<p class="admin__loading">Загрузка модуля...</p>'
         if (titleEl) titleEl.textContent = this.tabTitles[tab] || tab
 
-        // Уничтожаем предыдущий модуль
         this.activeModule = null
 
-        // Динамическая подгрузка (в реальном проекте можно через import())
         switch (tab) {
         case 'concepts':
-            import('/AdminConcepts.js').then(m => {
-            this.activeModule = new m.default(contentEl, this.toastManager)
-            })
+            import('./AdminConcept.js').then(m => { this.activeModule = new m.default(contentEl, this.toastManager) })
+            break
+        case 'users':
+            import('./AdminUser.js').then(m => { this.activeModule = new m.default(contentEl, this.toastManager) })
             break
         case 'dashboard':
             contentEl.innerHTML = '<p class="admin__empty">Статистика и графики будут добавлены позже.</p>'
-            break
-        case 'users':
-            contentEl.innerHTML = '<p class="admin__empty">Управление пользователями в разработке.</p>'
             break
         }
     }
