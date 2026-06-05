@@ -24,10 +24,11 @@ import AdminPanel from "./Admin.js";
     const favoritesManager = new Favorites();
     const modalManager = new Modal();
     
-    // Передаем toastManager туда, где он нужен
+    window.toast = toastManager;
     const userPanel = new UserPanel(modalManager);
     const profileEdit = new ProfileEdit(modalManager, userPanel, toastManager); // <-- Передача
-    const auth = new Auth(toastManager); // <-- Передача (нужно обновить Auth.js)
+    const auth = new Auth(toastManager); 
+
     
     new Concepts(favoritesManager);
     // new Header();
