@@ -339,6 +339,36 @@
       "phone": "+7 (999) 123-45-67",
       "favorites": [],
       "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "name": "Вова",
+      "email": "vova-savchenko-06@mail.ru",
+      "phone": "+375447356552",
+      "password": "еМ92РпЙ8",
+      "role": "client",
+      "favorites": [],
+      "createdAt": "2026-05-31T18:11:43.688Z",
+      "id": "yIqGmwOLof0"
+    },
+    {
+      "name": "Vova",
+      "email": "Vova@mail.ru",
+      "phone": "+375447356552",
+      "password": "tV92HgQ8",
+      "role": "client",
+      "favorites": [],
+      "createdAt": "2026-05-31T18:15:21.348Z",
+      "id": "KlavyDkMqKU"
+    },
+    {
+      "name": "456546",
+      "email": "sdfs@mail.ru",
+      "phone": "+375447356552",
+      "password": "Admin123!",
+      "role": "client",
+      "favorites": [],
+      "createdAt": "2026-05-31T18:16:33.687Z",
+      "id": "72n4CPvlRSc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

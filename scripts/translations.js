@@ -18,6 +18,7 @@ const translations = {
         'hero-title-bold': 'ПЕЧИ КАМИНЫ БАРБЕКЮ',
         'hero-title-light': 'под ключ',
         'hero-subtitle': 'проектирование архитектура инженерия монтаж',
+        'hero-slogan': 'С нами легко внедряются проекты',
         
         // Founder Section
         'founder-role': 'основатель и руководитель',
@@ -113,6 +114,8 @@ const translations = {
         'hero-title-bold': 'STOVES FIREPLACES BBQ',
         'hero-title-light': 'turnkey',
         'hero-subtitle': 'design architecture engineering installation',
+        'hero-slogan': 'Projects are easily implemented with us',
+
         
         // Founder Section
         'founder-role': 'founder and head',
