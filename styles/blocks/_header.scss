@@ -119,7 +119,7 @@
         @include mobile {
             display: flex;
             flex-direction: row;
-            gap: rem(65);
+            gap: rem(30);
             margin-left: auto;
         }
     }
@@ -152,7 +152,7 @@
 
         @include mobile {
             flex-direction: row;
-            gap: rem(50);
+            gap: rem(30);
         }
     }
 

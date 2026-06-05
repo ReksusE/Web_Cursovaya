@@ -515,7 +515,7 @@ h2,
   .header__side {
     display: flex;
     flex-direction: row;
-    gap: 4.0625rem;
+    gap: 1.875rem;
     margin-left: auto;
   }
 }
@@ -559,7 +559,7 @@ h2,
 @media (width <= 47.99875rem) {
   .header__controls {
     flex-direction: row;
-    gap: 3.125rem;
+    gap: 1.875rem;
   }
 }
 .header__lang-toggle, .header__theme-toggle, .header__user-icon {

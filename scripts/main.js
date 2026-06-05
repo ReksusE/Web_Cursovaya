@@ -31,7 +31,7 @@ import AdminPanel from "./Admin.js";
 
     
     new Concepts(favoritesManager);
-    // new Header();
+    new Header();
     new Hero();
     new TrustSlider();
     new Product(favoritesManager);
