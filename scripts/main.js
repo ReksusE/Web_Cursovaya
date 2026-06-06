@@ -15,6 +15,7 @@ import Toast from "./Toast.js";
 import ThemeManager from "./ThemeManager.js";
 import LangManager from "./LangManager.js";
 import AdminPanel from "./Admin.js";
+import AccessibilityPanel from "./AccessibilityPanel.js";
 
 
 (async () => {
@@ -39,6 +40,7 @@ import AdminPanel from "./Admin.js";
     new Timeline();
     new Portfolio();
     new AdminPanel(toastManager, modalManager);
+    new AccessibilityPanel();
 
     if (document.querySelector('[data-js-favorites-grid]')) {
         favoritesManager.renderPage();
