@@ -13,7 +13,7 @@
             <a href="/Pages/Home.html" class="auth-header__logo">
                 <img src="/images/logo.svg" alt="ArtKante" width="100">
             </a>
-            <a href="/Pages/Home.html" class="auth-header__back">
+            <a href="/Pages/Home.html" class="auth-header__back" data-i18n="auth-back">
                 <svg width="16" height="12" viewBox="0 0 27 19" fill="none">
                     <path d="M9.47319 18.5L0.499953 9.54511L9.44347 0.5M1.74624 9.54511H26.292" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -39,6 +39,7 @@
                         aria-selected="true"
                         aria-controls="panel-login"
                         data-tab="login"
+                        data-i18n="auth-tab-login"
                     >Вход</button>
                     <button
                         class="auth-tab"
@@ -46,6 +47,7 @@
                         aria-selected="false"
                         aria-controls="panel-register"
                         data-tab="register"
+                        data-i18n="auth-tab-register"
                     >Регистрация</button>
                 </div>
 
@@ -57,7 +59,7 @@
                     data-form="login"
                 >
                     <div class="auth-field">
-                        <label class="auth-field__label" for="login-email">Email</label>
+                        <label class="auth-field__label" for="login-email" data-i18n="auth-label-email">Email</label>
                         <input
                             class="auth-field__input"
                             type="email"
@@ -70,7 +72,7 @@
                     </div>
 
                     <div class="auth-field">
-                        <label class="auth-field__label" for="login-password">Пароль</label>
+                        <label class="auth-field__label" for="login-password" data-i18n="auth-label-password">Пароль</label>
                         <div class="auth-field__input-wrap">
                             <input
                                 class="auth-field__input"
@@ -91,11 +93,11 @@
                     </div>
 
                     <button type="submit" class="auth-submit">
-                        <span class="auth-submit__text">Войти</span>
+                        <span class="auth-submit__text" data-i18n="auth-btn-login">Войти</span>
                         <span class="auth-submit__spinner"></span>
                     </button>
 
-                    <div class="auth-divider"><span>или</span></div>
+                    <div class="auth-divider"><span data-i18n="auth-or">или</span></div>
 
                     <div class="auth-socials">
                         <button type="button" class="auth-social">
@@ -115,9 +117,9 @@
                         </button>
                     </div>
 
-                    <p class="auth-footnote">
+                    <p class="auth-footnote" data-i18n="auth-continue">
                         Продолжая, вы соглашаетесь с&nbsp;
-                        <a href="#" style="color:rgba(240,124,0,0.6)">политикой конфиденциальности</a>
+                        <a href="#" style="color:rgba(240,124,0,0.6)" data-i18n="auth-privacy-link">политикой конфиденциальности</a>
                     </p>
                 </form>
 
@@ -129,11 +131,11 @@
                     data-form="register"
                 >
                     <div class="auth-field">
-                        <p class="auth-section-label">Тип аккаунта</p>
+                        <p class="auth-section-label" data-i18n="auth-role-type">Тип аккаунта</p>
                         <div class="auth-roles">
                             <label class="auth-role">
                                 <input type="radio" name="role" value="client" checked>
-                                <span class="auth-role__label">
+                                <span class="auth-role__label" data-i18n="auth-role-client">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/>
                                         <path d="M4 20c0-3.314 3.582-6 8-6s8 2.686 8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -143,7 +145,7 @@
                             </label>
                             <label class="auth-role">
                                 <input type="radio" name="role" value="designer">
-                                <span class="auth-role__label">
+                                <span class="auth-role__label" data-i18n="auth-role-designer">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M12 3l2.5 6.5H21l-5.5 4 2 6.5L12 16l-5.5 4 2-6.5L3 9.5h6.5L12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                                     </svg>
@@ -152,7 +154,7 @@
                             </label>
                             <label class="auth-role">
                                 <input type="radio" name="role" value="admin">
-                                <span class="auth-role__label">
+                                <span class="auth-role__label" data-i18n="auth-role-master">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M12 2l3 4h5l-2 5 2 5h-5l-3 4-3-4H4l2-5-2-5h5L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                                     </svg>
@@ -163,25 +165,25 @@
                     </div>
 
                     <div class="auth-field">
-                        <label class="auth-field__label" for="reg-name">Имя</label>
+                        <label class="auth-field__label" for="reg-name" data-i18n="auth-label-name">Имя</label>
                         <input class="auth-field__input" type="text" id="reg-name" name="name" placeholder="Ирина Новоселова" autocomplete="name">
                         <span class="auth-field__error" id="reg-name-error"></span>
                     </div>
 
                     <div class="auth-field">
-                        <label class="auth-field__label" for="reg-email">Email</label>
+                        <label class="auth-field__label" for="reg-email" data-i18n="auth-label-email">Email</label>
                         <input class="auth-field__input" type="email" id="reg-email" name="email" placeholder="your@email.ru" autocomplete="email">
                         <span class="auth-field__error" id="reg-email-error"></span>
                     </div>
 
                     <div class="auth-field">
-                        <label class="auth-field__label" for="reg-phone">Телефон</label>
+                        <label class="auth-field__label" for="reg-phone" data-i18n="auth-label-phone">Телефон</label>
                         <input class="auth-field__input" type="tel" id="reg-phone" name="phone" placeholder="+375 (44) 000-00-00" autocomplete="tel">
                         <span class="auth-field__error" id="reg-phone-error"></span>
                     </div>
 
                     <div class="auth-field">
-                        <label class="auth-field__label" for="reg-password">Пароль</label>
+                        <label class="auth-field__label" for="reg-password" data-i18n="auth-label-password">Пароль</label>
                         <div class="auth-field__input-wrap">
                             <input class="auth-field__input" type="password" id="reg-password" name="password" placeholder="Минимум 8 символов" autocomplete="new-password">
                             <button type="button" class="auth-field__toggle" aria-label="Показать пароль" data-toggle-password="reg-password">
@@ -202,7 +204,7 @@
                     </div>
 
                     <div class="auth-field">
-                        <label class="auth-field__label" for="reg-password2">Повторите пароль</label>
+                        <label class="auth-field__label" for="reg-password2" data-i18n="auth-label-repeat-pass">Повторите пароль</label>
                         <div class="auth-field__input-wrap">
                             <input class="auth-field__input" type="password" id="reg-password2" name="password2" placeholder="••••••••" autocomplete="new-password">
                             <button type="button" class="auth-field__toggle" aria-label="Показать пароль" data-toggle-password="reg-password2">
@@ -222,21 +224,21 @@
                                 <path d="M1 4l3 3L9 1" stroke="#F07C00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
-                        <span class="auth-checkbox__text">
-                            Я принимаю <a href="#">условия использования</a> и
-                            <a href="#">политику конфиденциальности</a> ArtKante
+                        <span class="auth-checkbox__text" >
+                            Я принимаю <a href="#" data-i18n="auth-terms">условия использования</a> и
+                            <a href="#" data-i18n="auth-privacy-link">политику конфиденциальности</a> ArtKante
                         </span>
                     </label>
                     <span class="auth-field__error" id="reg-agree-error"></span>
 
                     <button type="submit" class="auth-submit">
-                        <span class="auth-submit__text">Создать аккаунт</span>
+                        <span class="auth-submit__text" data-i18n="auth-btn-create">Создать аккаунт</span>
                         <span class="auth-submit__spinner"></span>
                     </button>
 
-                    <p class="auth-footnote">
+                    <p class="auth-footnote" data-i18n="auth-have-account">
                         Уже есть аккаунт?&nbsp;
-                        <a href="#" style="color:rgba(240,124,0,0.7)" data-switch-tab="login">Войти</a>
+                        <a href="#" style="color:rgba(240,124,0,0.7)" data-switch-tab="login" data-i18n="auth-link-login">Войти</a>
                     </p>
                 </form>
             </div>

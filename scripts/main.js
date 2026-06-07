@@ -30,7 +30,7 @@ import AccessibilityPanel from "./AccessibilityPanel.js";
     const profileEdit = new ProfileEdit(modalManager, userPanel, toastManager); // <-- Передача
     const auth = new Auth(toastManager); 
 
-    
+    new AdminPanel(toastManager, modalManager);
     new Concepts(favoritesManager);
     new Header();
     new Hero();
@@ -39,7 +39,6 @@ import AccessibilityPanel from "./AccessibilityPanel.js";
     new FounderSlider();
     new Timeline();
     new Portfolio();
-    new AdminPanel(toastManager, modalManager);
     new AccessibilityPanel();
 
     if (document.querySelector('[data-js-favorites-grid]')) {
