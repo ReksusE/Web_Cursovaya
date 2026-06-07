@@ -204,12 +204,12 @@
     <main>
         <section class="concepts" data-js-concepts>
             <div class="concepts__container container">
-                <nav class="concepts__breadcrumbs">
+                <nav class="concepts__breadcrumbs reveal">
                     <a href="Home.html" class="concepts__breadcrumbs-list" data-i18n="nav-home">Главная</a>
                     <a href="Concept.html" class="concepts__breadcrumbs-list" data-i18n="">Концепты</a>
                 </nav>
 
-                <div class="concepts__filters">
+                <div class="concepts__filters reveal reveal-delay-1">
                 <!-- 1. Назначение -->
                 <div class="concepts__filters-group" data-filter-key="category">
                     <button type="button" class="concepts__filters-btn" data-js-filter-btn data-i18n="filter-btn-1">
@@ -293,7 +293,7 @@
                     <p class="concepts__loading" style="color: var(--color-gray-alt); font-size: 1rem;">Загрузка концептов...</p>
                 </div>
 
-                <div class="concepts__expandable-wrap">
+                <div class="concepts__expandable-wrap reveal reveal-delay-1">
                     <button type="button" class="concepts__expandable" data-js-concepts-expandable>Показать ещё</button>
                 </div>
             </div>
@@ -302,7 +302,7 @@
         <section class="showrooms">
             <div class="showrooms__container container">
                 <div class="showrooms__inner">
-                    <header class="showrooms__header">
+                    <header class="showrooms__header reveal">
                         <p class="showrooms__header-subtitle" data-i18n="showroom-title">Приглашаем в комфортные, удобные для встреч и презентаций шоурумы</p>
                         <div>
                             <h2 class="showrooms__header-title" data-i18n="showroom-building-1">центр дизайна artplay</h2>
@@ -310,8 +310,8 @@
                         </div>
                     </header>
 
-                    <div class="showrooms__content">
-                        <article class="showrooms__item">
+                    <div class="showrooms__content reveal reveal-delay-2">
+                        <article class="showrooms__item reveal reveal--fade-left">
                             <div class="showrooms__image-wrap">
                                 <img src="/images/showroom/106.png" alt="шоурум 106">
                             </div>
@@ -337,7 +337,7 @@
                             </div>
                             
                         </div>
-                        <article class="showrooms__item">
+                        <article class="showrooms__item reveal reveal--fade-right">
                             <div class="showrooms__image-wrap">
                                 <img src="/images/showroom/112.png" alt="шоурум 112">
                             </div>
@@ -345,13 +345,13 @@
                         </article>
                     </div>
 
-                    <div class="showrooms__link">
+                    <div class="showrooms__link reveal">
                         <a href="#" class="showrooms__link-item" data-i18n="showroom-scheme">открыть схему проезда</a>
                         <a href="#" class="showrooms__link-item" data-i18n="showroom-way">дорога от метро </a>
                     </div>
                 </div>
                 
-                <button class="showrooms__btn button" data-js-modal-open="showroom" data-i18n="showroom-callback">заказать обратный звонок</button>
+                <button class="showrooms__btn button reveal reveal-delay-3" data-js-modal-open="showroom" data-i18n="showroom-callback">заказать обратный звонок</button>
             </div>
         </section>
     </main>

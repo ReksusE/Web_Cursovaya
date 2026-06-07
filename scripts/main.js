@@ -17,6 +17,7 @@ import ThemeManager from "./ThemeManager.js";
 import LangManager from "./LangManager.js";
 import AdminPanel from "./Admin.js";
 import AccessibilityPanel from "./AccessibilityPanel.js";
+import ScrollReveal from "./ScrollReveal.js";
 
 
 (async () => {
@@ -42,6 +43,7 @@ import AccessibilityPanel from "./AccessibilityPanel.js";
     new Timeline();
     new Portfolio();
     new AccessibilityPanel();
+    const scrollReveal = new ScrollReveal();
 
     if (document.querySelector('[data-js-favorites-grid]')) {
         favoritesManager.renderPage();
