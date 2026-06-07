@@ -7,20 +7,25 @@
     <link rel="stylesheet" href="/styles/css/main.css">
 </head>
 <body class="admin-body">
+    <div class="preloader">
+        <div class="preloader__spinner"></div>
+        <div class="preloader__text">ArtKante</div>
+    </div>
+
     <div class="admin" data-js-admin>
         <aside class="admin__sidebar" data-js-admin-sidebar>
             <a href="./Home.html" class="admin__logo"><img src="/images/logo.svg" alt="ArtKante"></a>
             <nav class="admin__nav">
-                <button class="admin__nav-btn is-active" data-js-admin-tab="dashboard">Дашборд</button>
-                <button class="admin__nav-btn" data-js-admin-tab="concepts">Концепты</button>
-                <button class="admin__nav-btn" data-js-admin-tab="users">Пользователи</button>
+                <button class="admin__nav-btn is-active" data-js-admin-tab="dashboard" data-i18n="admin-btn-1">Дашборд</button>
+                <button class="admin__nav-btn" data-js-admin-tab="concepts" data-i18n="admin-btn-2">Концепты</button>
+                <button class="admin__nav-btn" data-js-admin-tab="users" data-i18n="admin-btn-3">Пользователи</button>
             </nav>
-            <button class="admin__logout" data-js-admin-logout>Выйти</button>
+            <button class="admin__logout" data-js-admin-logout data-i18n="admin-btn-4">Выйти</button>
         </aside>
 
         <main class="admin__main" data-js-admin-main>
             <header class="admin__header">
-                <h1 class="admin__title" data-js-admin-title>Дашборд</h1>
+                <h1 class="admin__title" data-js-admin-title data-i18n="admin-btn-1">Дашборд</h1>
                 <button class="header__theme-toggle" data-js-theme-toggle aria-label="Тёмная тема">
                 <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -42,7 +47,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             <div class="modal__header">
-                <h2 class="modal__title" id="concept-modal-title">Добавить концепт</h2>
+                <h2 class="modal__title" id="concept-modal-title" data-i18n="admin-btn-5">Добавить концепт</h2>
             </div>
             <div class="modal__body">
                 <form id="admin-concept-form" class="modal__form"></form>
@@ -58,7 +63,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             <div class="modal__header">
-                h2 class="modal__title" id="user-modal-title">Добавить пользователя</h2>
+                <h2 class="modal__title" id="user-modal-title" data-i18n="admin-btn-6">Добавить пользователя</h2>
             </div>
             <div class="modal__body">
                 <form id="admin-user-form" class="modal__form"></form>

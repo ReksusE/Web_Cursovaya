@@ -1,0 +1,41 @@
+@use '../helpers' as *;
+
+// Базовый класс для анимации появления
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    // Премиальная кривая Безье для плавного "выплывания"
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+
+    // Состояние, когда элемент в области видимости
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    // ─── ВАРИАНТЫ АНИМАЦИИ (опционально) ───
+    &--fade-left {
+        transform: translateX(-40px);
+        &.is-visible { transform: translateX(0); }
+    }
+
+    &--fade-right {
+        transform: translateX(40px);
+        &.is-visible { transform: translateX(0); }
+    }
+
+    &--scale {
+        transform: scale(0.95);
+        &.is-visible { transform: scale(1); }
+    }
+}
+
+// ─── КАСКАДНЫЕ ЗАДЕРЖКИ (для сеток и списков) ───
+// Генерируем классы .reveal-delay-1, .reveal-delay-2 и т.д.
+@for $i from 1 through 12 {
+    .reveal-delay-#{$i} {
+        transition-delay: #{$i * 0.1}s;
+    }
+}

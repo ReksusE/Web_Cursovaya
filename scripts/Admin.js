@@ -67,7 +67,7 @@ class AdminPanel {
             import('./AdminUser.js').then(m => { this.activeModule = new m.default(contentEl, this.toastManager, this.modalManager) })
             break
         case 'dashboard':
-            contentEl.innerHTML = '<p class="admin__empty">Статистика и графики будут добавлены позже.</p>'
+            contentEl.innerHTML = '<p class="admin__empty" data-i18n="admin-empty">Статистика и графики будут добавлены позже.</p>'
             break
         }
     }

@@ -1,0 +1,51 @@
+@use '../helpers' as *;
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999; // Выше модалок (1000) и панели доступности (9000)
+    background-color: var(--color-dark); // По умолчанию темная тема
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: rem(24);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+
+    // Состояние скрытия
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    // Спиннер
+    &__spinner {
+        width: rem(48);
+        height: rem(48);
+        border: rem(2) solid rgba(255, 255, 255, 0.1);
+        border-top-color: var(--color-accent-05);
+        border-radius: 50%;
+        animation: preloader-spin 0.8s linear infinite;
+    }
+
+    // Текст (опционально, для стиля)
+    &__text {
+        font-family: var(--font-family-accent);
+        font-size: rem(14);
+        font-weight: 500;
+        letter-spacing: rem(3);
+        text-transform: uppercase;
+        color: var(--color-gray);
+        animation: preloader-pulse 1.5s ease-in-out infinite;
+    }
+}
+
+@keyframes preloader-spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes preloader-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
