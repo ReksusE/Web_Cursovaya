@@ -1,3 +1,4 @@
+import Preloader from "./Preloader.js";
 import Header from "./Header.js";
 import UserPanel from "./UserPanel.js";
 import Hero from "./Hero.js";
@@ -19,6 +20,7 @@ import AccessibilityPanel from "./AccessibilityPanel.js";
 
 
 (async () => {
+    const preloader = new Preloader();
     const toastManager = new Toast();
     const themeManager = new ThemeManager();
     const langManager = new LangManager(); 
